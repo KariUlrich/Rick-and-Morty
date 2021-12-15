@@ -1,0 +1,28 @@
+body{
+    margin: 0px;
+}
+@mixin flex ($direction){
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-header{
+    @include flex($direction:column)
+}
+
+.nombre-imagen{
+     width: 200px;
+     height: 70px;
+     background-color: transparent;
+     position: fixed;
+     top: 20px;
+}
+.imagen-header-fondo{
+    width: 100%;
+    height: 400px;
+}
+
+
+

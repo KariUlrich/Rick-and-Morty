@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="imagen/ico" href="Rick_and_Morty.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5f7fafbd10.js" crossorigin="anonymous"></script>
+    <title>Rick and Morty</title>
+</head>
+<body>
+    <header>
+        <div class="imagen-header">
+            <img class="nombre-imagen" src="Rick_and_Morty.svg" alt="nombre">
+            <img class="imagen-header-fondo" src="fondo-rick-y-morty.jpg" alt="foto-fondo">
+        </div>
+    </header>
+<main>
+    <div>
+    <form>
+        <div>
+        <h2>Búsqueda</h2>
+        <div class="div-busqueda">
+        <i class="fas fa-search"></i>
+        <input type="text" id="busqueda-input" placeholder="Ingresá tu búsqueda" aria-label="input-busqueda">
+        </div>
+        <div class="div-filtros">
+            <label for="busqueda-por-tipo">TIPO</label>
+            <select id="busqueda-por-tipo" name="busqueda-por-tipo">
+                <option name="personaje">Personaje</option>
+                <option name="locacion">Locación</option>
+                <option name="episodio">Episodio</option>
+            </select>
+
+        </div>
+
+    </div>
+    </form>
+    </div>
+</main>
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>

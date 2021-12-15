@@ -1,0 +1,14 @@
+{
+  "name": "rick-and-morty",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Karina",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.45.0"
+  }
+}
