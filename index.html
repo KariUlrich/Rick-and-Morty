@@ -7,6 +7,9 @@
     <link rel="icon" type="imagen/ico" href="Rick_and_Morty.ico">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/5f7fafbd10.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
     <title>Rick and Morty</title>
 </head>
 <body>
@@ -15,15 +18,21 @@
             <img class="nombre-imagen" src="Rick_and_Morty.svg" alt="nombre">
             <img class="imagen-header-fondo" src="fondo-rick-y-morty.jpg" alt="foto-fondo">
         </div>
+        <nav class="barra-de-navegacion">
+            <button class="boton-character">Character</button>
+            <button class="boton-location">Location</button>
+            <button class="boton episode">Episode</button>
+        </nav>
     </header>
 <main>
-    <div>
     <form>
-        <div>
-        <h2>Búsqueda</h2>
-        <div class="div-busqueda">
-        <i class="fas fa-search"></i>
-        <input type="text" id="busqueda-input" placeholder="Ingresá tu búsqueda" aria-label="input-busqueda">
+        <div class="div-del-form">
+        <div class="div-de-busqueda">
+        <h2>Search</h2>
+          <div class="div-busqueda">
+          <i class="fas fa-search"></i>
+          <input type="text" id="busqueda-input" placeholder="Ingresá tu búsqueda" aria-label="input-busqueda">
+          </div>
         </div>
         <div class="div-filtros">
             <label for="busqueda-por-tipo">TIPO</label>
@@ -32,12 +41,13 @@
                 <option name="locacion">Locación</option>
                 <option name="episodio">Episodio</option>
             </select>
-
         </div>
-
-    </div>
+        </div>
     </form>
+    <div class="tarjetas-personajes">
+        
     </div>
+
 </main>
 
 
