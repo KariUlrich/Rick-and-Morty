@@ -1,13 +1,18 @@
-body{
-    margin: 0px;
-}
+
 
 // varialbles
 $color-principal: rgb(115, 115, 173);
-$color-fonfo: black;
+$color-fondo: black;
+$color-fondo2: rgb(140, 140, 172);
+$color-fondo3: transparent;
 $tipo-de-letra:'Creepster', cursive;
+$alto-imagen-nombre: 90px;
+$largo-imagen-nombre: 200px;
 
-
+body{
+    margin: 0px;
+    background-color: $color-fondo2;
+}
 
 @mixin flex ($direction){
     display: flex;
@@ -16,52 +21,116 @@ $tipo-de-letra:'Creepster', cursive;
     justify-content: center;
 }
 
+@mixin button {
+    background-color: $color-principal;
+    color: $color-fondo;
+    width: 120px;
+    height: 35px;
+    margin: 0px 30px;   
+    font-family: $tipo-de-letra;
+    font-size: 25px;
+    border-style: none;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px -6px $color-principal
+}
+
+.seccion-header{
+    display: flex;
+    flex-direction: column;
+}
 .imagen-header{
-    @include flex($direction:column)
+    @include flex($direction:column);
+    background-color: $color-fondo;
+    padding-top: 50px;
 }
 
 .nombre-imagen{
-     width: 200px;
-     height: 90px;
-     background-color: transparent;
+     width: $largo-imagen-nombre;
+     height: $alto-imagen-nombre;
+     background-color: $color-fondo3;
      position: fixed;
-     top: 20px;
+     top: 45px;
 }
 .imagen-header-fondo{
-    width: 100%;
-    height: 400px;
+    width: 90%;
+    height: 480px;
+    border-radius: 20px;
 }
 
 .barra-de-navegacion{
-    background-color: $color-fonfo;
-    height: 60px;
+    background-color: $color-fondo;
+    height: 100px;
     @include flex($direction:row)
 }
 
 // botones
 .barra-de-navegacion button{
-    background-color: $color-principal;
-    color: $color-fonfo;
-    width: 100px;
-    height: 30px;
-    margin: 0px 30px;   
-    font-family: $tipo-de-letra;
-    font-size: 20px;
-    border-style: none;
-    border-radius: 10px;
+    @include button()
 }
 
-.div-del-form{
+//seccion barra de busqueda
+
+//botones
+
+.barra-de-navegacion-busqueda button{
+    @include button();
+}
+
+// seccion nav
+
+.seccion-busqueda{
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content:space-between;
-    background-color: $color-principal;
+    justify-content: center;
 }
-.div-de-busqueda{
+.nombre-imagen-busqueda{
+     width: $largo-imagen-nombre;
+     height: $alto-imagen-nombre;
+     background-color: $color-fondo3;
+     padding-left: 20px;
+}
+.barra-de-navegacion-busqueda{
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    background-color: $color-fondo;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 10px 10px -6px black;
 }
+
+// secion character
+
+.seccion-character{
+    @include flex($direction:row)
+}
+.form-character{
+    @include flex($direction:row);
+    height: 80px;
+    width: 400px;
+    border:solid 2px $color-fondo;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+.form-character h2 {
+    font-family: $tipo-de-letra;
+    font-size: 25px;
+    margin-right: 15px; 
+}
+.div-imagen-busqueda{
+    width: 50px;
+    height: 50px;
+    background-color: $color-fondo3;
+}
+.imagen-busqueda{
+    width: 100%;
+    height: 100%;
+    background-color: $color-fondo3;
+    margin-left: 15px;
+}
+
+
 
 
 
