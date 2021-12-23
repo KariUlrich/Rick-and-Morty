@@ -51,6 +51,7 @@ body {
   border-style: none;
   border-radius: 10px;
   box-shadow: 0px 10px 10px -6px #7373ad;
+  cursor: pointer;
 }
 
 .barra-de-navegacion-busqueda button {
@@ -64,6 +65,7 @@ body {
   border-style: none;
   border-radius: 10px;
   box-shadow: 0px 10px 10px -6px #7373ad;
+  cursor: pointer;
 }
 
 .seccion-busqueda {
@@ -90,26 +92,37 @@ body {
   box-shadow: 0px 10px 10px -6px black;
 }
 
-.seccion-character {
+#busqueda-input {
+  border: solid 2px #7373ad;
+  border-radius: 10px;
+  height: 20px;
+  width: 280px;
+}
+
+.seccion-character,
+.seccion-location,
+.seccion-episode {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-.form-character {
+.form-character,
+.form-location,
+.form-episode {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   height: 80px;
-  width: 400px;
+  width: 500px;
   border: solid 2px black;
   border-radius: 20px;
   margin-top: 30px;
 }
 
-.form-character h2 {
+h2 {
   font-family: "Creepster", cursive;
   font-size: 25px;
   margin-right: 15px;
