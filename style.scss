@@ -6,6 +6,7 @@ $color-fondo: black;
 $color-fondo2: rgb(140, 140, 172);
 $color-fondo3: transparent;
 $color-fondo4: rgb(227, 227, 248);
+$color-fondo5: rgb(248, 248, 184);
 $tipo-de-letra:'Creepster', cursive;
 $alto-imagen-nombre: 90px;
 $largo-imagen-nombre: 200px;
@@ -23,8 +24,8 @@ body{
     justify-content: center;
 }
 
-@mixin button {
-    background-color: $color-principal;
+@mixin button ($color) {
+    background-color: $color;
     color: $color-fondo;
     width: 120px;
     height: 35px;
@@ -68,7 +69,7 @@ body{
 
 // botones
 .barra-de-navegacion button{
-    @include button()
+    @include button($color-principal)
 }
 
 //seccion barra de busqueda
@@ -76,7 +77,23 @@ body{
 //botones
 
 .barra-de-navegacion-busqueda button{
-    @include button();
+    @include button($color-principal);
+}
+
+//botones paginado
+
+.botones-paginado{
+    margin: 30px 0px;
+}
+.boton-prev,
+.boton-next{
+    @include button($color-fondo5);
+    font-size: 20px;
+}
+.desabilitado{
+    background-color:rgb(248, 248, 238);
+    color: rgb(82, 81, 81);
+    cursor: auto
 }
 
 // seccion nav
@@ -146,7 +163,7 @@ label {
 
 // seccion character/personajes - Tarjetas
 
-.tarjeta-personajes,
+.tarjetas-personajes,
 .tarjetas-locacion,
 .tarjetas-episodios{
     @include flex($direction:row);

@@ -11,7 +11,12 @@ const botonEpisode = document.querySelector(".boton-episode")
 const botonCharacterBusqueda = document.querySelector(".boton-character-busqueda")
 const botonLocationBusqueda = document.querySelector(".boton-location-busqueda")
 const botonEpisodeBusqueda = document.querySelector(".boton-episode-busqueda")
-
+const botonPrevPersonajes = document.querySelector(".prev-personjes")
+const botonNextPersonajes = document.querySelector(".next-personajes")
+const botonPrevLocacion = document.querySelector(".prev-locacion")
+const botonNextLocacion = document.querySelector(".next-locacion")
+const botonPrevEpisodio = document.querySelector(".prev-episodios")
+const botonNextEpisodio = document.querySelector(".next-episodios")
 
 // pagina principal
 
@@ -61,17 +66,22 @@ botonEpisodeBusqueda.onclick = () => {
 
 // get a la api para generear tarjetas de personaje
 
+let paginaActual = 1
+let ultimaPagina = 0
+
 const obtenerPersonajes = () => {
-    fetch(`https://rickandmortyapi.com/api/character`)
+    console.log(paginaActual)
+    fetch(`https://rickandmortyapi.com/api/character?page=${paginaActual}`)
     .then(res => res.json())
     .then(data => {
     console.log(data)   
+    ultimaPagina = data.info.pages
     HTMLTarjetasPersonajes(data.results)
 })
 }
 
 const HTMLTarjetasPersonajes = (personajes) => {
-   const divTarjetasPersonajes = document.querySelector(".tarjeta-personajes")
+   const divTarjetasPersonajes = document.querySelector(".tarjetas-personajes")
    const htmlDeTarjetas = personajes.reduce((acc,curr) => {
    return acc + `
         <div class="html-tarjetas personajes">
@@ -86,7 +96,7 @@ obtenerPersonajes()
 // get a la api para generear tarjetas de locacion
 
 const obtenerLocaciones = () => {
-    fetch(`https://rickandmortyapi.com/api/location`)
+    fetch(`https://rickandmortyapi.com/api/location?page=${paginaActual}`)
     .then(res => res.json())
     .then(data => {
     console.log(data)
@@ -111,7 +121,7 @@ obtenerLocaciones()
 // get a la api para generear tarjetas de episodios
 
 const obternerEpisodios = () => {
-    fetch(`https://rickandmortyapi.com/api/episode`)
+    fetch(`https://rickandmortyapi.com/api/episode?page=${paginaActual}`)
     .then(res => res.json())
     .then(data => {
     console.log(data)
@@ -138,3 +148,66 @@ const HTMLTarjetasEpisodios = (episodios) => {
 divTarjetasEpisodios.innerHTML = htmlDeTarjetas
 }
 obternerEpisodios()
+
+//funcionalidad paginado
+
+botonPrevPersonajes.onclick = () => {
+    paginaActual--
+    if (paginaActual === 1){
+        botonPrevPersonajes.disabled = true  //no funciona
+        // botonPrev.classList.add("desabilitado")
+    }
+    else{
+        botonPrevPersonajes.disabled = false
+        // botonPrev.classList.remove("desabilitado")
+    }
+     obtenerPersonajes()
+}
+
+botonNextPersonajes.onclick = () => {
+    paginaActual++
+    if(paginaActual === ultimaPagina){
+        botonNextPersonajes.disabled = true
+    }
+    obtenerPersonajes()
+}
+botonPrevLocacion.onclick = () => {
+    paginaActual--
+    if (paginaActual === 1){
+        botonPrevLocacion.disabled = true  //no funciona
+        // botonPrev.classList.add("desabilitado")
+    }
+    else{
+        botonPrevLocacion.disabled = false
+        // botonPrev.classList.remove("desabilitado")
+    }
+    obtenerLocaciones()
+}
+
+botonNextLocacion.onclick = () => {
+    paginaActual++
+    if(paginaActual === ultimaPagina){
+        botonNextLocacion.disabled = true
+    }
+    obtenerLocaciones()
+}
+botonPrevEpisodio.onclick = () => {
+    paginaActual--
+    if (paginaActual === 1){
+        botonPrevEpisodio.disabled = true  //no funciona
+        // botonPrev.classList.add("desabilitado")
+    }
+    else{
+        botonPrevEpisodio.disabled = false
+        // botonPrev.classList.remove("desabilitado")
+    }
+    obternerEpisodios()
+}
+
+botonNextEpisodio.onclick = () => {
+    paginaActual++
+    if(paginaActual === ultimaPagina){
+        botonNextEpisodio.disabled = true
+    }
+    obternerEpisodios()
+}

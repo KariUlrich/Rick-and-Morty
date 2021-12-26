@@ -68,6 +68,32 @@ body {
   cursor: pointer;
 }
 
+.botones-paginado {
+  margin: 30px 0px;
+}
+
+.boton-prev,
+.boton-next {
+  background-color: #f8f8b8;
+  color: black;
+  width: 120px;
+  height: 35px;
+  margin: 0px 30px;
+  font-family: "Creepster", cursive;
+  font-size: 25px;
+  border-style: none;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px -6px #7373ad;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.desabilitado {
+  background-color: #f8f8ee;
+  color: #525151;
+  cursor: auto;
+}
+
 .seccion-busqueda {
   display: flex;
   align-items: center;
@@ -141,7 +167,7 @@ label {
   margin-left: 15px;
 }
 
-.tarjeta-personajes,
+.tarjetas-personajes,
 .tarjetas-locacion,
 .tarjetas-episodios {
   display: flex;
