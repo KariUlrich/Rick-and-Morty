@@ -58,3 +58,83 @@ botonEpisodeBusqueda.onclick = () => {
     seccionCharacter.style.display = "none";
     seccionLocation.style.display = "none";
 }
+
+// get a la api para generear tarjetas de personaje
+
+const obtenerPersonajes = () => {
+    fetch(`https://rickandmortyapi.com/api/character`)
+    .then(res => res.json())
+    .then(data => {
+    console.log(data)   
+    HTMLTarjetasPersonajes(data.results)
+})
+}
+
+const HTMLTarjetasPersonajes = (personajes) => {
+   const divTarjetasPersonajes = document.querySelector(".tarjeta-personajes")
+   const htmlDeTarjetas = personajes.reduce((acc,curr) => {
+   return acc + `
+        <div class="html-tarjetas personajes">
+            <img src="${curr.image}"/>
+            <h2>${curr.name}</h2>
+        </div>`
+}, "")
+divTarjetasPersonajes.innerHTML = htmlDeTarjetas
+}
+obtenerPersonajes()
+
+// get a la api para generear tarjetas de locacion
+
+const obtenerLocaciones = () => {
+    fetch(`https://rickandmortyapi.com/api/location`)
+    .then(res => res.json())
+    .then(data => {
+    console.log(data)
+    HTMLTarjetasLocaciones(data.results)
+    })
+}
+
+const HTMLTarjetasLocaciones = (locaciones) => {
+    const divTarjetasLocaciones = document.querySelector(".tarjetas-locacion")
+    const htmlDeTarjetas = locaciones.reduce((acc,curr) => {
+    return acc + `
+    <div class="html-tarjetas locacion">
+            <h2>${curr.name}</h2>
+            <p>${curr.dimension}</p>
+            <p>${curr.type}</p>
+        </div>`
+    }, "")
+    divTarjetasLocaciones.innerHTML = htmlDeTarjetas
+}
+obtenerLocaciones()
+
+// get a la api para generear tarjetas de episodios
+
+const obternerEpisodios = () => {
+    fetch(`https://rickandmortyapi.com/api/episode`)
+    .then(res => res.json())
+    .then(data => {
+    console.log(data)
+    HTMLTarjetasEpisodios(data.results)
+    })
+}
+
+const HTMLTarjetasEpisodios = (episodios) => {
+    const divTarjetasEpisodios = document.querySelector(".tarjetas-episodios")
+    const htmlDeTarjetas = episodios.reduce((acc,curr) => {
+    return acc + `
+    <div class="html-tarjetas episodios">
+            <h2>${curr.name}</h2>
+              <div class="episodio-id"> 
+                 <p>ID:</p>
+                 <p>${curr.id}</p>
+              </div>
+              <div class="episodio-date">
+                 <p>Creation date:</p>
+                 <p>${curr.air_date}</p>
+              </div>
+        </div>`
+    }, "")
+divTarjetasEpisodios.innerHTML = htmlDeTarjetas
+}
+obternerEpisodios()
