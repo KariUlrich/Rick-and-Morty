@@ -96,6 +96,7 @@ obtenerPersonajes()
 // get a la api para generear tarjetas de locacion
 
 const obtenerLocaciones = () => {
+    console.log(paginaActual)
     fetch(`https://rickandmortyapi.com/api/location?page=${paginaActual}`)
     .then(res => res.json())
     .then(data => {
@@ -109,6 +110,7 @@ const HTMLTarjetasLocaciones = (locaciones) => {
     const htmlDeTarjetas = locaciones.reduce((acc,curr) => {
     return acc + `
     <div class="html-tarjetas locacion">
+            <img src="locaciones.jpg">
             <h2>${curr.name}</h2>
             <p>${curr.dimension}</p>
             <p>${curr.type}</p>
@@ -121,6 +123,7 @@ obtenerLocaciones()
 // get a la api para generear tarjetas de episodios
 
 const obternerEpisodios = () => {
+    console.log(paginaActual)
     fetch(`https://rickandmortyapi.com/api/episode?page=${paginaActual}`)
     .then(res => res.json())
     .then(data => {
@@ -134,15 +137,16 @@ const HTMLTarjetasEpisodios = (episodios) => {
     const htmlDeTarjetas = episodios.reduce((acc,curr) => {
     return acc + `
     <div class="html-tarjetas episodios">
+            <img src="episodio.jpg">
             <h2>${curr.name}</h2>
-              <div class="episodio-id"> 
-                 <p>ID:</p>
-                 <p>${curr.id}</p>
-              </div>
-              <div class="episodio-date">
-                 <p>Creation date:</p>
-                 <p>${curr.air_date}</p>
-              </div>
+            <div class="episodio-id"> 
+                <p>ID:</p>
+                <p>${curr.id}</p>
+            </div>
+            <div class="episodio-date">
+                <p>Creation date:</p>
+                <p>${curr.air_date}</p>
+            </div>
         </div>`
     }, "")
 divTarjetasEpisodios.innerHTML = htmlDeTarjetas
