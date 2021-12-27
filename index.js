@@ -19,6 +19,7 @@ const botonPrevEpisodio = document.querySelector(".prev-episodios")
 const botonNextEpisodio = document.querySelector(".next-episodios")
 const seccionDetallePersonaje = document.querySelector(".detalle-personaje")
 
+
 // pagina principal
 
 seccionSearch.style.display = "none"; 
@@ -34,12 +35,14 @@ botonCharacter.onclick = () => {
     seccionSearch.style.display = "flex"; 
     seccionHeader.style.display = "none";
     seccionCharacter.style.display = "flex";
+    seccionDetallePersonaje.style.display = "none"
 }
 botonLocation.onclick = () => {
     seccionSearch.style.display = "flex";
     seccionHeader.style.display = "none";
     seccionCharacter.style.display = "none";
     seccionLocation.style.display = "flex"
+    seccionDetallePersonaje.style.display = "none"
 }
 botonEpisode.onclick = () => {
     seccionSearch.style.display = "flex";
@@ -47,6 +50,7 @@ botonEpisode.onclick = () => {
     seccionCharacter.style.display = "none";
     seccionLocation.style.display = "none";
     seccionEpisode.style.display = "flex"
+    seccionDetallePersonaje.style.display = "none"
 }
 
 // onclic de los botones busqueda
@@ -97,27 +101,23 @@ divTarjetasPersonajes.innerHTML = htmlDeTarjetas
 obtenerPersonajes()
 
 // click de cada tarjeta de persona para ver el detalle con el fetch y armar el HTML del detalle
-const HTMLDeLaSeccionDetalleDelPersonaje = (personaje) =>{
-    const seccionDetalleDelPersonaje = document.querySelector(".detalle-personaje")
-    const detallePersonaje = personaje.reduce((acc,curr) => {
-        return acc + `
-        <div class="tarjeta-detalle-personaje">
-            <div class="div-principal>
-            <img src="${curr.image}"/>
-            <h2>${curr.name}</h2>
-            </div>
-            <div class="div-info">
-            <p>Gender: ${curr.gender}</p>
-            <p>Location: ${curr.location}</p>
-            <p>Origin: ${curr.origin.name}</p>
-            <p>Species: ${curr.species}</p>
-            <p>Status: ${curr.status}</p>
-            <p>Type: ${curr.type}</p>
-            </div>
-        </div>`
-    }, "")
-    seccionDetalleDelPersonaje.innerHTML = detallePersonaje
+const HTMLDeLaSeccionDetalleDelPersonaje = (curr) =>{
+        seccionDetallePersonaje.innerHTML = 
+           `<div class="tarjeta-detalle-personaje">
+              <div class="div-principal">
+               <img src="${curr.image}"/>
+               <h2>${curr.name}</h2>
+              </div>
+              <div class="div-info">
+               <p>Gender: ${curr.gender}</p>
+               <p>Location: ${curr.location.name}</p>
+               <p>Origin: ${curr.origin.name}</p>
+               <p>Species: ${curr.species}</p>
+               <p>Status: ${curr.status}</p>
+             </div>
+          </div>`
 }
+
 const getDelPersonaje = (id) => {
     fetch(`https://rickandmortyapi.com/api/character/${id}`)
     .then(res => res.json())

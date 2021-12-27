@@ -225,6 +225,27 @@ h2{
     
 }
 
+// seccion tarjetes de detalle de cada personaje
+
+.detalle-personaje{
+    @include flex($direction:row)
+}
+.tarjeta-detalle-personaje{
+    @include flex($direction:row);
+    margin-top: 80px;
+}
+.div-principal{
+    @include flex($direction:column);
+    border:solid 8px $color-fondo;
+    border-radius: 20px;
+    margin-right: 80px;
+}
+.div-info{
+p{
+    font-family: $tipo-de-letra;
+    font-size: 20px;
+}
+}
 
 
 
