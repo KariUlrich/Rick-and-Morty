@@ -67,21 +67,17 @@ body{
     @include flex($direction:row)
 }
 
-// botones
+// botones barra de navegacion
 .barra-de-navegacion button{
     @include button($color-principal)
 }
 
-//seccion barra de busqueda
-
-//botones
-
+//botones seccion barra de busqueda
 .barra-de-navegacion-busqueda button{
     @include button($color-principal);
 }
 
 //botones paginado
-
 .botones-paginado{
     margin: 30px 0px;
 }
@@ -96,8 +92,16 @@ body{
     cursor: auto
 }
 
-// seccion nav
+// boton atras de la tarjeta de detalle
+.div-boton-back{
+    margin-top: 80px;
+button{
+    @include button($color-fondo5);
+    font-size: 20px;
+}
+}
 
+// seccion nav
 .seccion-busqueda{
     display: flex;
     align-items: center;

@@ -20,6 +20,7 @@ const botonNextEpisodio = document.querySelector(".next-episodios")
 const seccionDetallePersonaje = document.querySelector(".detalle-personaje")
 
 
+
 // pagina principal
 
 seccionSearch.style.display = "none"; 
@@ -35,6 +36,8 @@ botonCharacter.onclick = () => {
     seccionSearch.style.display = "flex"; 
     seccionHeader.style.display = "none";
     seccionCharacter.style.display = "flex";
+    seccionLocation.style.display = "none"
+    seccionEpisode.style.display = "none"
     seccionDetallePersonaje.style.display = "none"
 }
 botonLocation.onclick = () => {
@@ -42,6 +45,7 @@ botonLocation.onclick = () => {
     seccionHeader.style.display = "none";
     seccionCharacter.style.display = "none";
     seccionLocation.style.display = "flex"
+    seccionEpisode.style.display = "none"
     seccionDetallePersonaje.style.display = "none"
 }
 botonEpisode.onclick = () => {
@@ -58,16 +62,20 @@ botonCharacterBusqueda.onclick = () => {
     seccionCharacter.style.display = "flex";
     seccionLocation.style.display = "none";
     seccionEpisode.style.display = "none";
+    seccionDetallePersonaje.style.display = "none"
+
 }
 botonLocationBusqueda.onclick = () => {
     seccionLocation.style.display = "flex";
     seccionCharacter.style.display = "none";
     seccionEpisode.style.display = "none";
+    seccionDetallePersonaje.style.display = "none"
 }
 botonEpisodeBusqueda.onclick = () => {
     seccionEpisode.style.display = "flex";
     seccionCharacter.style.display = "none";
     seccionLocation.style.display = "none";
+    seccionDetallePersonaje.style.display = "none"
 }
 
 // get a la api para generear tarjetas de personaje
@@ -100,7 +108,8 @@ divTarjetasPersonajes.innerHTML = htmlDeTarjetas
 }
 obtenerPersonajes()
 
-// click de cada tarjeta de persona para ver el detalle con el fetch y armar el HTML del detalle
+// click de cada tarjeta de personaje para ver el detalle con el fetch y armar el HTML
+
 const HTMLDeLaSeccionDetalleDelPersonaje = (curr) =>{
         seccionDetallePersonaje.innerHTML = 
            `<div class="tarjeta-detalle-personaje">
@@ -114,10 +123,19 @@ const HTMLDeLaSeccionDetalleDelPersonaje = (curr) =>{
                <p>Origin: ${curr.origin.name}</p>
                <p>Species: ${curr.species}</p>
                <p>Status: ${curr.status}</p>
-             </div>
-          </div>`
+               <div class="div-boton-back">
+               <button class="boton-back">Back</button>
+               </div>  
+              </div>                        
+            </div>`
+            const botonBack = document.querySelector(".boton-back")
+            botonBack.onclick = () => {
+                seccionCharacter.style.display = "flex";
+                seccionLocation.style.display = "none";
+                seccionEpisode.style.display = "none";
+                seccionDetallePersonaje.style.display = "none"
+            }
 }
-
 const getDelPersonaje = (id) => {
     fetch(`https://rickandmortyapi.com/api/character/${id}`)
     .then(res => res.json())
@@ -260,3 +278,4 @@ botonNextEpisodio.onclick = () => {
     }
     obternerEpisodios()
 }
+
