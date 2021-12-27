@@ -18,11 +18,11 @@ const botonNextLocacion = document.querySelector(".next-locacion")
 const botonPrevEpisodio = document.querySelector(".prev-episodios")
 const botonNextEpisodio = document.querySelector(".next-episodios")
 const seccionDetallePersonaje = document.querySelector(".detalle-personaje")
-
+const inputBusquedaPersonaje = document.querySelector("#busqueda-input")
+const formCharacter = document.querySelector(".form-character")
 
 
 // pagina principal
-
 seccionSearch.style.display = "none"; 
 seccionCharacter.style.display = "none";
 seccionLocation.style.display = "none";
@@ -31,7 +31,6 @@ seccionDetallePersonaje.style.display = "none"
 
 
 // onclic de los botones de navegacion
-
 botonCharacter.onclick = () => {
     seccionSearch.style.display = "flex"; 
     seccionHeader.style.display = "none";
@@ -63,7 +62,6 @@ botonCharacterBusqueda.onclick = () => {
     seccionLocation.style.display = "none";
     seccionEpisode.style.display = "none";
     seccionDetallePersonaje.style.display = "none"
-
 }
 botonLocationBusqueda.onclick = () => {
     seccionLocation.style.display = "flex";
@@ -79,7 +77,6 @@ botonEpisodeBusqueda.onclick = () => {
 }
 
 // get a la api para generear tarjetas de personaje
-
 let paginaActual = 1
 let ultimaPagina = 0
 
@@ -94,7 +91,6 @@ const obtenerPersonajes = () => {
     clickTarjetaDeCadaPersonaje()
 })
 }
-
 const HTMLTarjetasPersonajes = (personajes) => {
    const divTarjetasPersonajes = document.querySelector(".tarjetas-personajes")
    const htmlDeTarjetas = personajes.reduce((acc,curr) => {
@@ -109,7 +105,6 @@ divTarjetasPersonajes.innerHTML = htmlDeTarjetas
 obtenerPersonajes()
 
 // click de cada tarjeta de personaje para ver el detalle con el fetch y armar el HTML
-
 const HTMLDeLaSeccionDetalleDelPersonaje = (curr) =>{
         seccionDetallePersonaje.innerHTML = 
            `<div class="tarjeta-detalle-personaje">
@@ -167,7 +162,6 @@ const obtenerLocaciones = () => {
     HTMLTarjetasLocaciones(data.results)
     })
 }
-
 const HTMLTarjetasLocaciones = (locaciones) => {
     const divTarjetasLocaciones = document.querySelector(".tarjetas-locacion")
     const htmlDeTarjetas = locaciones.reduce((acc,curr) => {
@@ -184,7 +178,6 @@ const HTMLTarjetasLocaciones = (locaciones) => {
 obtenerLocaciones()
 
 // get a la api para generear tarjetas de episodios
-
 const obternerEpisodios = () => {
     console.log(paginaActual)
     fetch(`https://rickandmortyapi.com/api/episode?page=${paginaActual}`)
@@ -194,7 +187,6 @@ const obternerEpisodios = () => {
     HTMLTarjetasEpisodios(data.results)
     })
 }
-
 const HTMLTarjetasEpisodios = (episodios) => {
     const divTarjetasEpisodios = document.querySelector(".tarjetas-episodios")
     const htmlDeTarjetas = episodios.reduce((acc,curr) => {
@@ -217,7 +209,6 @@ divTarjetasEpisodios.innerHTML = htmlDeTarjetas
 obternerEpisodios()
 
 //funcionalidad paginado
-
 botonPrevPersonajes.onclick = () => {
     paginaActual--
     if (paginaActual === 1){
@@ -230,7 +221,6 @@ botonPrevPersonajes.onclick = () => {
     }
      obtenerPersonajes()
 }
-
 botonNextPersonajes.onclick = () => {
     paginaActual++
     if(paginaActual === ultimaPagina){
@@ -250,7 +240,6 @@ botonPrevLocacion.onclick = () => {
     }
     obtenerLocaciones()
 }
-
 botonNextLocacion.onclick = () => {
     paginaActual++
     if(paginaActual === ultimaPagina){
@@ -270,12 +259,28 @@ botonPrevEpisodio.onclick = () => {
     }
     obternerEpisodios()
 }
-
 botonNextEpisodio.onclick = () => {
     paginaActual++
     if(paginaActual === ultimaPagina){
         botonNextEpisodio.disabled = true
     }
     obternerEpisodios()
+}
+
+// funcionalidad serch de personajes por nombre
+
+formCharacter.onsubmit = (e) => {
+e.preventDefault()
+console.log(inputBusquedaPersonaje.value)
+searchPorNombre(inputBusquedaPersonaje.value)
+}
+
+const searchPorNombre = (nombre) => {
+    fetch(`https://rickandmortyapi.com/api/character/?name=${nombre}`)
+    .then(res => res.json())
+    .then(data =>{
+     console.log(data)
+     HTMLTarjetasPersonajes(data.results)
+    })
 }
 
