@@ -17,13 +17,15 @@ const botonPrevLocacion = document.querySelector(".prev-locacion")
 const botonNextLocacion = document.querySelector(".next-locacion")
 const botonPrevEpisodio = document.querySelector(".prev-episodios")
 const botonNextEpisodio = document.querySelector(".next-episodios")
+const seccionDetallePersonaje = document.querySelector(".detalle-personaje")
 
 // pagina principal
 
 seccionSearch.style.display = "none"; 
 seccionCharacter.style.display = "none";
 seccionLocation.style.display = "none";
-seccionEpisode.style.display = "none"
+seccionEpisode.style.display = "none";
+seccionDetallePersonaje.style.display = "none"
 
 
 // onclic de los botones de navegacion
@@ -77,6 +79,7 @@ const obtenerPersonajes = () => {
     console.log(data)   
     ultimaPagina = data.info.pages
     HTMLTarjetasPersonajes(data.results)
+    clickTarjetaDeCadaPersonaje()
 })
 }
 
@@ -84,7 +87,7 @@ const HTMLTarjetasPersonajes = (personajes) => {
    const divTarjetasPersonajes = document.querySelector(".tarjetas-personajes")
    const htmlDeTarjetas = personajes.reduce((acc,curr) => {
    return acc + `
-        <div class="html-tarjetas personajes">
+        <div class="html-tarjetas personajes" data-id=${curr.id}>
             <img src="${curr.image}"/>
             <h2>${curr.name}</h2>
         </div>`
@@ -93,8 +96,50 @@ divTarjetasPersonajes.innerHTML = htmlDeTarjetas
 }
 obtenerPersonajes()
 
-// get a la api para generear tarjetas de locacion
+// click de cada tarjeta de persona para ver el detalle con el fetch y armar el HTML del detalle
+const HTMLDeLaSeccionDetalleDelPersonaje = (personaje) =>{
+    const seccionDetalleDelPersonaje = document.querySelector(".detalle-personaje")
+    const detallePersonaje = personaje.reduce((acc,curr) => {
+        return acc + `
+        <div class="tarjeta-detalle-personaje">
+            <div class="div-principal>
+            <img src="${curr.image}"/>
+            <h2>${curr.name}</h2>
+            </div>
+            <div class="div-info">
+            <p>Gender: ${curr.gender}</p>
+            <p>Location: ${curr.location}</p>
+            <p>Origin: ${curr.origin.name}</p>
+            <p>Species: ${curr.species}</p>
+            <p>Status: ${curr.status}</p>
+            <p>Type: ${curr.type}</p>
+            </div>
+        </div>`
+    }, "")
+    seccionDetalleDelPersonaje.innerHTML = detallePersonaje
+}
+const getDelPersonaje = (id) => {
+    fetch(`https://rickandmortyapi.com/api/character/${id}`)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      HTMLDeLaSeccionDetalleDelPersonaje(data)
+    })
+}
+const clickTarjetaDeCadaPersonaje = () => {
+    const personajes = document.querySelectorAll(".personajes")
+    for (let i = 0; i < personajes.length; i++) {
+        personajes[i].onclick = () => {
+        const personajeID = personajes[i].dataset.id
+        getDelPersonaje(personajeID)
+        seccionSearch.style.display = "flex"; 
+        seccionCharacter.style.display = "none";
+        seccionDetallePersonaje.style.display = "flex"
+        }
+    }
+}
 
+// get a la api para generear tarjetas de locacion
 const obtenerLocaciones = () => {
     console.log(paginaActual)
     fetch(`https://rickandmortyapi.com/api/location?page=${paginaActual}`)
