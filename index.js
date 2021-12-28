@@ -24,6 +24,10 @@ const inputBusquedaLocation = document.querySelector("#busqueda-input-location")
 const formLocation = document.querySelector(".form-location")
 const inputBusquedaEpisode = document.querySelector("#busqueda-input-episode")
 const formEpisode = document.querySelector(".form-episode")
+const botonesBusqueda = document.querySelector(".botones-busqueda")
+const menuMobile = document.querySelector(".menu-mobile")
+const botonHamburguesa = document.querySelector(".boton-hamburguesa")
+
 
 // pagina principal
 seccionSearch.style.display = "none"; 
@@ -99,6 +103,11 @@ botonEpisodeBusqueda.onclick = () => {
     obtenerPersonajes()
     obtenerLocaciones()
 }
+
+// onclic de los botones busqueda en menu mobile
+
+
+
 
 // get a la api para generear tarjetas de personaje
 let paginaActual = 1
@@ -330,5 +339,11 @@ const searchPorNombreEpisode = (nombre) => {
 }
 
 
+//funcionalidad menu mobile
+
+botonHamburguesa.onclick = () => {
+    botonesBusqueda.style.display = "flex";
+    menuMobile.style.display = "none"
+    }
 
 

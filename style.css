@@ -132,6 +132,8 @@ h2 {
 }
 
 .botones-paginado {
+  display: flex;
+  justify-content: center;
   margin: 30px 0px;
 }
 
@@ -173,6 +175,18 @@ h2 {
   box-shadow: 0px 10px 10px -6px #80abc4;
   cursor: pointer;
   font-size: 20px;
+}
+
+.menu-mobile {
+  display: none;
+}
+.menu-mobile .botones-mobile {
+  display: none;
+  flex-direction: column;
+}
+.menu-mobile .boton-hamburguesa {
+  color: black;
+  width: 50px;
 }
 
 body {
@@ -291,6 +305,83 @@ input {
   height: 100%;
   background-color: transparent;
   margin-left: 15px;
+}
+
+@media screen and (max-width: 875px) and (min-width: 320px) {
+  .menu-mobile {
+    display: flex;
+  }
+
+  .botones-busqueda {
+    display: none;
+    flex-direction: column;
+  }
+  .botones-busqueda button {
+    width: 70px;
+    height: 20px;
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+}
+@media screen and (max-width: 550px) and (min-width: 320px) {
+  .barra-de-navegacion {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .barra-de-navegacion button {
+    margin-bottom: 10px;
+  }
+
+  .form-character,
+.form-location,
+.form-episode {
+    width: 400px;
+  }
+
+  input {
+    width: 170px;
+  }
+}
+@media screen and (max-width: 450px) and (min-width: 320px) {
+  .imagen-header-fondo {
+    width: 90%;
+    height: 400px;
+  }
+
+  .form-character,
+.form-location,
+.form-episode {
+    width: 320px;
+  }
+
+  .imagen-busqueda {
+    display: none;
+  }
+
+  label {
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 360px) and (min-width: 320px) {
+  .imagen-header-fondo {
+    width: 90%;
+    height: 370px;
+  }
+
+  .nombre-imagen-busqueda {
+    width: 150px;
+    height: 70px;
+  }
+
+  .form-character,
+.form-location,
+.form-episode {
+    width: 280px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
