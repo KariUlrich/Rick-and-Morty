@@ -20,7 +20,10 @@ const botonNextEpisodio = document.querySelector(".next-episodios")
 const seccionDetallePersonaje = document.querySelector(".detalle-personaje")
 const inputBusquedaPersonaje = document.querySelector("#busqueda-input")
 const formCharacter = document.querySelector(".form-character")
-
+const inputBusquedaLocation = document.querySelector("#busqueda-input-location")
+const formLocation = document.querySelector(".form-location")
+const inputBusquedaEpisode = document.querySelector("#busqueda-input-episode")
+const formEpisode = document.querySelector(".form-episode")
 
 // pagina principal
 seccionSearch.style.display = "none"; 
@@ -37,7 +40,7 @@ botonCharacter.onclick = () => {
     seccionCharacter.style.display = "flex";
     seccionLocation.style.display = "none"
     seccionEpisode.style.display = "none"
-    seccionDetallePersonaje.style.display = "none"
+    seccionDetallePersonaje.style.display = "none"    
 }
 botonLocation.onclick = () => {
     seccionSearch.style.display = "flex";
@@ -53,7 +56,7 @@ botonEpisode.onclick = () => {
     seccionCharacter.style.display = "none";
     seccionLocation.style.display = "none";
     seccionEpisode.style.display = "flex"
-    seccionDetallePersonaje.style.display = "none"
+    seccionDetallePersonaje.style.display = "none"    
 }
 
 // onclic de los botones busqueda
@@ -62,18 +65,30 @@ botonCharacterBusqueda.onclick = () => {
     seccionLocation.style.display = "none";
     seccionEpisode.style.display = "none";
     seccionDetallePersonaje.style.display = "none"
+    inputBusquedaLocation.value = ""
+    inputBusquedaEpisode.value = ""
+    obtenerLocaciones()
+    obternerEpisodios()
 }
 botonLocationBusqueda.onclick = () => {
     seccionLocation.style.display = "flex";
     seccionCharacter.style.display = "none";
     seccionEpisode.style.display = "none";
     seccionDetallePersonaje.style.display = "none"
+    inputBusquedaPersonaje.value = ""
+    inputBusquedaEpisode.value = ""
+    obtenerPersonajes()
+    obternerEpisodios()
 }
 botonEpisodeBusqueda.onclick = () => {
     seccionEpisode.style.display = "flex";
     seccionCharacter.style.display = "none";
     seccionLocation.style.display = "none";
     seccionDetallePersonaje.style.display = "none"
+    inputBusquedaPersonaje.value = ""
+    inputBusquedaLocation.value = ""
+    obtenerPersonajes()
+    obtenerLocaciones()
 }
 
 // get a la api para generear tarjetas de personaje
@@ -267,15 +282,15 @@ botonNextEpisodio.onclick = () => {
     obternerEpisodios()
 }
 
-// funcionalidad serch de personajes por nombre
-
+//SEARCH X NOMBRE EN LOS ENDPOINTS
+// funcionalidad search de personajes por nombre
 formCharacter.onsubmit = (e) => {
 e.preventDefault()
 console.log(inputBusquedaPersonaje.value)
-searchPorNombre(inputBusquedaPersonaje.value)
+searchPorNombreCharacter(inputBusquedaPersonaje.value)
 }
 
-const searchPorNombre = (nombre) => {
+const searchPorNombreCharacter = (nombre) => {
     fetch(`https://rickandmortyapi.com/api/character/?name=${nombre}`)
     .then(res => res.json())
     .then(data =>{
@@ -283,4 +298,32 @@ const searchPorNombre = (nombre) => {
      HTMLTarjetasPersonajes(data.results)
     })
 }
+
+// funcionalidad search de locacion por nombre
+formLocation.onsubmit = (e) => {
+    e.preventDefault()
+    searchPorNumeroLocation(inputBusquedaLocation.value)    
+}
+const searchPorNumeroLocation = (nombre) => {
+    fetch(`https://rickandmortyapi.com/api/location/?name=${nombre}`)
+    .then(res => res.json())
+    .then(data =>{
+    HTMLTarjetasLocaciones(data.results)
+    })
+}
+// funcionalidad search de episodio por nombre
+formEpisode.onsubmit = (e) => {
+    e.preventDefault()
+    searchPorNombreEpisode(inputBusquedaEpisode.value)   
+}
+const searchPorNombreEpisode = (nombre) => {
+    fetch(`https://rickandmortyapi.com/api/episode/?name=${nombre}`)
+    .then(res => res.json())
+    .then(data =>{
+    HTMLTarjetasEpisodios(data.results)
+    })
+}
+
+
+
 
