@@ -1,190 +1,3 @@
-body {
-  margin: 0px;
-  background-color: #8c8cac;
-}
-
-.seccion-header {
-  display: flex;
-  flex-direction: column;
-}
-
-.imagen-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-  padding-top: 50px;
-}
-
-.nombre-imagen {
-  width: 200px;
-  height: 90px;
-  background-color: transparent;
-  position: fixed;
-  top: 45px;
-}
-
-.imagen-header-fondo {
-  width: 90%;
-  height: 480px;
-  border-radius: 20px;
-}
-
-.barra-de-navegacion {
-  background-color: black;
-  height: 100px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.barra-de-navegacion button {
-  background-color: #7373ad;
-  color: black;
-  width: 120px;
-  height: 35px;
-  margin: 0px 30px;
-  font-family: "Creepster", cursive;
-  font-size: 25px;
-  border-style: none;
-  border-radius: 10px;
-  box-shadow: 0px 10px 10px -6px #7373ad;
-  cursor: pointer;
-}
-
-.barra-de-navegacion-busqueda button {
-  background-color: #7373ad;
-  color: black;
-  width: 120px;
-  height: 35px;
-  margin: 0px 30px;
-  font-family: "Creepster", cursive;
-  font-size: 25px;
-  border-style: none;
-  border-radius: 10px;
-  box-shadow: 0px 10px 10px -6px #7373ad;
-  cursor: pointer;
-}
-
-.botones-paginado {
-  margin: 30px 0px;
-}
-
-.boton-prev,
-.boton-next {
-  background-color: #f8f8b8;
-  color: black;
-  width: 120px;
-  height: 35px;
-  margin: 0px 30px;
-  font-family: "Creepster", cursive;
-  font-size: 25px;
-  border-style: none;
-  border-radius: 10px;
-  box-shadow: 0px 10px 10px -6px #7373ad;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-.desabilitado {
-  background-color: #f8f8ee;
-  color: #525151;
-  cursor: auto;
-}
-
-.div-boton-back {
-  margin-top: 80px;
-}
-.div-boton-back button {
-  background-color: #f8f8b8;
-  color: black;
-  width: 120px;
-  height: 35px;
-  margin: 0px 30px;
-  font-family: "Creepster", cursive;
-  font-size: 25px;
-  border-style: none;
-  border-radius: 10px;
-  box-shadow: 0px 10px 10px -6px #7373ad;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-.seccion-busqueda {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.nombre-imagen-busqueda {
-  width: 200px;
-  height: 90px;
-  background-color: transparent;
-  padding-left: 20px;
-}
-
-.barra-de-navegacion-busqueda {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 90%;
-  background-color: black;
-  border-radius: 20px;
-  margin-top: 20px;
-  box-shadow: 0px 10px 10px -6px black;
-}
-
-input {
-  border: solid 2px #7373ad;
-  border-radius: 10px;
-  height: 20px;
-  width: 280px;
-}
-
-.seccion-character,
-.seccion-location,
-.seccion-episode {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.form-character,
-.form-location,
-.form-episode {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-  width: 500px;
-  border: solid 2px black;
-  border-radius: 20px;
-  margin-top: 30px;
-}
-
-label {
-  font-family: "Creepster", cursive;
-  font-size: 25px;
-  margin-right: 15px;
-}
-
-.div-imagen-busqueda {
-  width: 50px;
-  height: 50px;
-  background-color: transparent;
-}
-
-.imagen-busqueda {
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  margin-left: 15px;
-}
-
 .tarjetas-personajes,
 .tarjetas-locacion,
 .tarjetas-episodios {
@@ -204,6 +17,7 @@ label {
   box-shadow: 0px 10px 10px -6px black;
 }
 .html-tarjetas p {
+  font-family: "Orbitron", sans-serif;
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 5px;
@@ -285,6 +99,194 @@ h2 {
 .div-info p {
   font-family: "Creepster", cursive;
   font-size: 20px;
+}
+
+.barra-de-navegacion button {
+  background-color: #5f9cc0;
+  color: black;
+  width: 120px;
+  height: 35px;
+  margin: 0px 30px;
+  font-family: "Creepster", cursive;
+  font-size: 25px;
+  border-style: none;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px -6px #5f9cc0;
+  cursor: pointer;
+}
+
+.barra-de-navegacion-busqueda button {
+  background-color: #5f9cc0;
+  color: black;
+  width: 120px;
+  height: 35px;
+  margin: 0px 30px;
+  font-family: "Creepster", cursive;
+  font-size: 25px;
+  border-style: none;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px -6px #5f9cc0;
+  cursor: pointer;
+}
+
+.botones-paginado {
+  margin: 30px 0px;
+}
+
+.boton-prev,
+.boton-next {
+  background-color: #f8f8b8;
+  color: black;
+  width: 120px;
+  height: 35px;
+  margin: 0px 30px;
+  font-family: "Creepster", cursive;
+  font-size: 25px;
+  border-style: none;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px -6px #5f9cc0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.desabilitado {
+  background-color: #f8f8ee;
+  color: #525151;
+  cursor: auto;
+}
+
+.div-boton-back {
+  margin-top: 80px;
+}
+.div-boton-back button {
+  background-color: #f8f8b8;
+  color: black;
+  width: 120px;
+  height: 35px;
+  margin: 0px 30px;
+  font-family: "Creepster", cursive;
+  font-size: 25px;
+  border-style: none;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px -6px #5f9cc0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+body {
+  margin: 0px;
+  background-color: #a2c6cf;
+}
+
+.seccion-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.imagen-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  padding-top: 50px;
+}
+
+.nombre-imagen {
+  width: 200px;
+  height: 90px;
+  background-color: transparent;
+  position: fixed;
+  top: 45px;
+}
+
+.imagen-header-fondo {
+  width: 90%;
+  height: 480px;
+  border-radius: 20px;
+}
+
+.barra-de-navegacion {
+  background-color: black;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.seccion-busqueda {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.nombre-imagen-busqueda {
+  width: 200px;
+  height: 90px;
+  background-color: transparent;
+  padding-left: 20px;
+}
+
+.barra-de-navegacion-busqueda {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  background-color: black;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0px 10px 10px -6px black;
+}
+
+.seccion-character,
+.seccion-location,
+.seccion-episode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-character,
+.form-location,
+.form-episode {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 500px;
+  border: solid 3px black;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+label {
+  font-family: "Creepster", cursive;
+  font-size: 25px;
+  margin-right: 15px;
+}
+
+input {
+  border: solid 2px #5f9cc0;
+  border-radius: 10px;
+  height: 20px;
+  width: 280px;
+}
+
+.div-imagen-busqueda {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+}
+
+.imagen-busqueda {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  margin-left: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */

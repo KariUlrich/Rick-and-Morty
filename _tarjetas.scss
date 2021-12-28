@@ -1,0 +1,88 @@
+@mixin flex ($direction){
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+}
+// seccion personajes-locacion-episodio - TARJETAS
+.tarjetas-personajes,
+.tarjetas-locacion,
+.tarjetas-episodios{
+    @include flex($direction:row);
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.html-tarjetas{
+    text-align: center;
+    border: solid 5px $color-fondo;
+    border-radius: 8px;
+    margin: 15px;
+    box-shadow: 0px 10px 10px -6px $color-fondo;
+p{
+    font-family: $tipo-de-letra-secundario;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+}
+.personajes{
+    @include flex($direction:column);
+}
+.episodios,
+.locacion{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 350px;
+    height: 300px;
+    background-color: $color-fondo4;
+img{
+    width: 350px;
+    height: 150px;
+    margin: 0;
+}
+h2{
+    margin: 5px 0px;
+}
+}
+.locacion{
+img{
+    width: 350px;
+    height: 150px;
+    margin: 0;
+}
+h2{
+    margin: 5px 0px;
+}
+}
+h2{
+    font-family: $tipo-de-letra;
+    font-size: $tamano-de-fuente-grande;
+} 
+.episodio-id,
+.episodio-date {
+    display: flex;
+    justify-content: space-between;
+}
+
+// seccion tarjetas de detalle de cada personaje
+.detalle-personaje{
+    @include flex($direction:row)
+}
+.tarjeta-detalle-personaje{
+    @include flex($direction:row);
+    margin-top: 80px;
+}
+.div-principal{
+    @include flex($direction:column);
+    border:solid 8px $color-fondo;
+    border-radius: 20px;
+    margin-right: 80px;
+}
+.div-info{
+p{
+    font-family: $tipo-de-letra;
+    font-size: $tamano-de-fuente-chico;
+}
+}

@@ -1,0 +1,47 @@
+//estilado del boton
+@mixin button ($color) {
+    background-color: $color;
+    color: $color-fondo;
+    width: 120px;
+    height: 35px;
+    margin: 0px 30px;   
+    font-family: $tipo-de-letra;
+    font-size: $tamano-de-fuente-mediano;
+    border-style: none;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px -6px $color-principal;
+    cursor: pointer;
+}
+// botones barra de navegacion
+.barra-de-navegacion button{
+    @include button($color-principal)
+}
+
+//botones seccion barra de busqueda
+.barra-de-navegacion-busqueda button{
+    @include button($color-principal);
+}
+
+//botones paginado
+.botones-paginado{
+    margin: 30px 0px;
+}
+.boton-prev,
+.boton-next{
+    @include button($color-fondo5);
+    font-size: $tamano-de-fuente-chico;
+}
+.desabilitado{
+    background-color:rgb(248, 248, 238);
+    color: rgb(82, 81, 81);
+    cursor: auto
+}
+
+// boton atras de la tarjeta de detalle
+.div-boton-back{
+    margin-top: 80px;
+button{
+    @include button($color-fondo5);
+    font-size: $tamano-de-fuente-chico;
+}
+}
