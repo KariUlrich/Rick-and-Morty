@@ -1,5 +1,5 @@
 // definicion de variables
-
+const imagenInicio = document.querySelector(".imagen-inicio")
 const botonCharacter = document.querySelector(".boton-character")
 const seccionSearch = document.querySelector(".seccion-busqueda")
 const seccionHeader = document.querySelector(".seccion-header")
@@ -57,6 +57,15 @@ botonEpisode.onclick = () => {
     seccionLocation.style.display = "none";
     seccionEpisode.style.display = "flex"
     seccionDetallePersonaje.style.display = "none"    
+}
+
+imagenInicio.onclick = () => {
+    seccionHeader.style.display = "flex";
+    seccionSearch.style.display = "none"; 
+    seccionCharacter.style.display = "none";
+    seccionLocation.style.display = "none"
+    seccionEpisode.style.display = "none"
+    seccionDetallePersonaje.style.display = "none"
 }
 
 // onclic de los botones busqueda
@@ -169,11 +178,9 @@ const clickTarjetaDeCadaPersonaje = () => {
 
 // get a la api para generear tarjetas de locacion
 const obtenerLocaciones = () => {
-    console.log(paginaActual)
     fetch(`https://rickandmortyapi.com/api/location?page=${paginaActual}`)
     .then(res => res.json())
     .then(data => {
-    console.log(data)
     HTMLTarjetasLocaciones(data.results)
     })
 }
@@ -198,7 +205,6 @@ const obternerEpisodios = () => {
     fetch(`https://rickandmortyapi.com/api/episode?page=${paginaActual}`)
     .then(res => res.json())
     .then(data => {
-    console.log(data)
     HTMLTarjetasEpisodios(data.results)
     })
 }
@@ -294,7 +300,6 @@ const searchPorNombreCharacter = (nombre) => {
     fetch(`https://rickandmortyapi.com/api/character/?name=${nombre}`)
     .then(res => res.json())
     .then(data =>{
-     console.log(data)
      HTMLTarjetasPersonajes(data.results)
     })
 }

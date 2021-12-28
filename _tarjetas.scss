@@ -28,6 +28,7 @@ p{
 }
 .personajes{
     @include flex($direction:column);
+    background-color: $color-fondo4;
 }
 .episodios,
 .locacion{
@@ -72,13 +73,14 @@ h2{
 }
 .tarjeta-detalle-personaje{
     @include flex($direction:row);
-    margin-top: 80px;
+    margin-top: 80px;    
 }
 .div-principal{
     @include flex($direction:column);
     border:solid 8px $color-fondo;
     border-radius: 20px;
     margin-right: 80px;
+    background-color: $color-fondo4;
 }
 .div-info{
 p{

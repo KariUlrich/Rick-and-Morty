@@ -29,6 +29,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #e3e3f8;
 }
 
 .episodios,
@@ -94,6 +95,7 @@ h2 {
   border: solid 8px black;
   border-radius: 20px;
   margin-right: 80px;
+  background-color: #e3e3f8;
 }
 
 .div-info p {
@@ -102,7 +104,7 @@ h2 {
 }
 
 .barra-de-navegacion button {
-  background-color: #5f9cc0;
+  background-color: #80abc4;
   color: black;
   width: 120px;
   height: 35px;
@@ -111,12 +113,12 @@ h2 {
   font-size: 25px;
   border-style: none;
   border-radius: 10px;
-  box-shadow: 0px 10px 10px -6px #5f9cc0;
+  box-shadow: 0px 10px 10px -6px #80abc4;
   cursor: pointer;
 }
 
 .barra-de-navegacion-busqueda button {
-  background-color: #5f9cc0;
+  background-color: #80abc4;
   color: black;
   width: 120px;
   height: 35px;
@@ -125,7 +127,7 @@ h2 {
   font-size: 25px;
   border-style: none;
   border-radius: 10px;
-  box-shadow: 0px 10px 10px -6px #5f9cc0;
+  box-shadow: 0px 10px 10px -6px #80abc4;
   cursor: pointer;
 }
 
@@ -144,7 +146,7 @@ h2 {
   font-size: 25px;
   border-style: none;
   border-radius: 10px;
-  box-shadow: 0px 10px 10px -6px #5f9cc0;
+  box-shadow: 0px 10px 10px -6px #80abc4;
   cursor: pointer;
   font-size: 20px;
 }
@@ -168,7 +170,7 @@ h2 {
   font-size: 25px;
   border-style: none;
   border-radius: 10px;
-  box-shadow: 0px 10px 10px -6px #5f9cc0;
+  box-shadow: 0px 10px 10px -6px #80abc4;
   cursor: pointer;
   font-size: 20px;
 }
@@ -225,8 +227,8 @@ body {
 .nombre-imagen-busqueda {
   width: 200px;
   height: 90px;
-  background-color: transparent;
   padding-left: 20px;
+  cursor: pointer;
 }
 
 .barra-de-navegacion-busqueda {
@@ -261,6 +263,7 @@ body {
   border: solid 3px black;
   border-radius: 20px;
   margin-top: 30px;
+  background-color: #80abc4;
 }
 
 label {
@@ -270,10 +273,11 @@ label {
 }
 
 input {
-  border: solid 2px #5f9cc0;
+  border: solid 2px #80abc4;
   border-radius: 10px;
   height: 20px;
   width: 280px;
+  background-color: #e3e3f8;
 }
 
 .div-imagen-busqueda {

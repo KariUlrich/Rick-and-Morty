@@ -46,8 +46,8 @@ body{
 .nombre-imagen-busqueda{
      width: $largo-imagen-nombre;
      height: $alto-imagen-nombre;
-     background-color: $color-fondo3;
      padding-left: 20px;
+     cursor: pointer;
 }
 .barra-de-navegacion-busqueda{
     display: flex;
@@ -74,6 +74,7 @@ body{
     border:solid 3px $color-fondo;
     border-radius: 20px;
     margin-top: 30px;
+    background-color: $color-principal
 }
 label {
     font-family: $tipo-de-letra;
@@ -85,6 +86,7 @@ input{
     border-radius: 10px;
     height: 20px;
     width: 280px;
+    background-color: $color-fondo4
 }
 .div-imagen-busqueda{
     width: 50px;
