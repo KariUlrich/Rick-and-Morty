@@ -32,12 +32,10 @@
             margin-right: 0px;
         }
     }
-    
-    
     @media screen and (max-width: 550px) and (min-width: 320px) {
         .barra-de-navegacion{
             height: 200px;
-            @include flex($direction:column)
+            @include flex($direction:row)
         }
         .barra-de-navegacion button{
                 margin-bottom: 10px;
@@ -56,6 +54,7 @@
             width: 90%;
             height: 400px;
         }
+
         .form-character,
         .form-location,
         .form-episode{
