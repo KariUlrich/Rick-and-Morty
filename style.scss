@@ -87,7 +87,8 @@ input{
     border-radius: 10px;
     height: 20px;
     width: 280px;
-    background-color: $color-fondo4
+    background-color: $color-fondo4;
+    outline: none;
 }
 .div-imagen-busqueda{
     width: 50px;
@@ -100,5 +101,15 @@ input{
     background-color: $color-fondo3;
     margin-left: 15px;
 }
-// menu mobile
+
+input:hover{
+    border-color: $color-hover;
+}
+input:active{
+    border-color: $color-hover;
+    box-shadow: 0px 10px 10px -6px $color-hover;
+}
+input:focus{
+    border-color: $color-hover;
+}
 

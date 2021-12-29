@@ -11,13 +11,15 @@
     @include flex($direction:row);
     flex-wrap: wrap;
     margin-top: 20px;
+
 }
 .html-tarjetas{
     text-align: center;
-    border: solid 5px $color-fondo;
+    border: solid 8px $color-fondo;
     border-radius: 8px;
     margin: 15px;
     box-shadow: 0px 10px 10px -6px $color-fondo;
+    overflow: hidden;
 p{
     font-family: $tipo-de-letra-secundario;
     margin-left: 20px;
@@ -29,6 +31,8 @@ p{
 .personajes{
     @include flex($direction:column);
     background-color: $color-fondo4;
+    cursor: pointer;
+    transition: 0.1s ease-in;
 }
 .episodios,
 .locacion{
@@ -81,10 +85,17 @@ h2{
     border-radius: 20px;
     margin-right: 80px;
     background-color: $color-fondo4;
+    overflow: hidden;
 }
 .div-info{
 p{
     font-family: $tipo-de-letra;
     font-size: $tamano-de-fuente-chico;
 }
+}
+.personajes:hover{
+    transform: scale(1.1)
+}
+.personajes:active{
+    box-shadow: 15px 15px 10px -6px $color-hover;
 }

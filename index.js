@@ -204,7 +204,7 @@ const HTMLTarjetasLocaciones = (locaciones) => {
     const htmlDeTarjetas = locaciones.reduce((acc,curr) => {
     return acc + `
     <div class="html-tarjetas locacion">
-            <img src="locaciones.jpg">
+            <img src="pictures/locaciones.jpg">
             <h2>${curr.name}</h2>
             <p>${curr.dimension}</p>
             <p>${curr.type}</p>
@@ -228,7 +228,7 @@ const HTMLTarjetasEpisodios = (episodios) => {
     const htmlDeTarjetas = episodios.reduce((acc,curr) => {
     return acc + `
     <div class="html-tarjetas episodios">
-            <img src="episodio.jpg">
+            <img src="pictures/episodio.jpg">
             <h2>${curr.name}</h2>
             <div class="episodio-id"> 
                 <p>ID:</p>

@@ -11,10 +11,11 @@
 
 .html-tarjetas {
   text-align: center;
-  border: solid 5px black;
+  border: solid 8px black;
   border-radius: 8px;
   margin: 15px;
   box-shadow: 0px 10px 10px -6px black;
+  overflow: hidden;
 }
 .html-tarjetas p {
   font-family: "Orbitron", sans-serif;
@@ -30,6 +31,8 @@
   align-items: center;
   justify-content: center;
   background-color: #e3e3f8;
+  cursor: pointer;
+  transition: 0.1s ease-in;
 }
 
 .episodios,
@@ -96,11 +99,20 @@ h2 {
   border-radius: 20px;
   margin-right: 80px;
   background-color: #e3e3f8;
+  overflow: hidden;
 }
 
 .div-info p {
   font-family: "Creepster", cursive;
   font-size: 20px;
+}
+
+.personajes:hover {
+  transform: scale(1.1);
+}
+
+.personajes:active {
+  box-shadow: 15px 15px 10px -6px #19f89b;
 }
 
 .barra-de-navegacion button {
@@ -187,6 +199,17 @@ h2 {
 .menu-mobile .boton-hamburguesa {
   color: black;
   width: 50px;
+}
+
+button:hover {
+  background-color: #19f89b;
+  box-shadow: 0px 10px 10px -6px #19f89b;
+}
+
+button:focus {
+  outline: none;
+  background-color: #19f89b;
+  box-shadow: 0px 10px 10px -6px #19f89b;
 }
 
 @media screen and (max-width: 875px) and (min-width: 320px) {
@@ -435,6 +458,7 @@ input {
   height: 20px;
   width: 280px;
   background-color: #e3e3f8;
+  outline: none;
 }
 
 .div-imagen-busqueda {
@@ -448,6 +472,19 @@ input {
   height: 100%;
   background-color: transparent;
   margin-left: 15px;
+}
+
+input:hover {
+  border-color: #19f89b;
+}
+
+input:active {
+  border-color: #19f89b;
+  box-shadow: 0px 10px 10px -6px #19f89b;
+}
+
+input:focus {
+  border-color: #19f89b;
 }
 
 /*# sourceMappingURL=style.css.map */
