@@ -78,8 +78,10 @@ botonCharacterBusqueda.onclick = () => {
     seccionLocation.style.display = "none";
     seccionEpisode.style.display = "none";
     seccionDetallePersonaje.style.display = "none"
+    inputBusquedaPersonaje.value = ""
     inputBusquedaLocation.value = ""
     inputBusquedaEpisode.value = ""
+    obtenerPersonajes()
     obtenerLocaciones()
     obternerEpisodios()
 }
@@ -88,9 +90,11 @@ botonLocationBusqueda.onclick = () => {
     seccionCharacter.style.display = "none";
     seccionEpisode.style.display = "none";
     seccionDetallePersonaje.style.display = "none"
+    inputBusquedaLocation.value = ""
     inputBusquedaPersonaje.value = ""
     inputBusquedaEpisode.value = ""
     obtenerPersonajes()
+    obtenerLocaciones()
     obternerEpisodios()
 }
 botonEpisodeBusqueda.onclick = () => {
@@ -98,10 +102,12 @@ botonEpisodeBusqueda.onclick = () => {
     seccionCharacter.style.display = "none";
     seccionLocation.style.display = "none";
     seccionDetallePersonaje.style.display = "none"
+    inputBusquedaEpisode.value = ""
     inputBusquedaPersonaje.value = ""
     inputBusquedaLocation.value = ""
     obtenerPersonajes()
     obtenerLocaciones()
+    obternerEpisodios()
 }
 
 // onclic de los botones busqueda en menu mobile
@@ -129,7 +135,7 @@ const HTMLTarjetasPersonajes = (personajes) => {
    const htmlDeTarjetas = personajes.reduce((acc,curr) => {
    return acc + `
         <div class="html-tarjetas personajes" data-id=${curr.id}>
-            <img src="${curr.image}"/>
+            <img class="imagen-personaje" src="${curr.image}"/>
             <h2>${curr.name}</h2>
         </div>`
 }, "")

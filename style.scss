@@ -1,6 +1,7 @@
 @import "variables";
 @import "tarjetas";
 @import "botones";
+@import "mediascreen";
 
 body{
     margin: 0px;
@@ -100,71 +101,4 @@ input{
     margin-left: 15px;
 }
 // menu mobile
-
-
-@media screen and (max-width: 875px) and (min-width: 320px) {
-.menu-mobile{
-        display: flex;
-}
-.botones-busqueda{
-        display: none;
-        flex-direction: column;
-        button{
-         width: 70px;
-         height: 20px;
-         font-size: $tamano-de-fuente-mas-chico;
-         margin-bottom: 5px;
-        }
-    }
-}
-
-@media screen and (max-width: 550px) and (min-width: 320px) {
-    .barra-de-navegacion{
-        height: 200px;
-        @include flex($direction:column)
-    }
-    .barra-de-navegacion button{
-            margin-bottom: 10px;
-        }
-    .form-character,
-    .form-location,
-    .form-episode{
-        width: 400px;
-    }
-    input{
-        width: 170px;
-    }
-}
-@media screen and (max-width: 450px) and (min-width: 320px) {
-    .imagen-header-fondo{
-        width: 90%;
-        height: 400px;
-    }
-    .form-character,
-    .form-location,
-    .form-episode{
-        width: 320px;
-    }
-    .imagen-busqueda{
-        display: none;
-    }
-    label {
-        margin-left: 10px; 
-    }
-}
-@media screen and (max-width: 360px) and (min-width: 320px) {
-    .imagen-header-fondo{
-        width: 90%;
-        height: 370px;
-    }
-    .nombre-imagen-busqueda{
-        width: 150px;
-        height: 70px;
-   }
-   .form-character,
-   .form-location,
-   .form-episode{
-    width: 280px;
-}
-}
 
