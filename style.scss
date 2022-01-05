@@ -7,7 +7,7 @@
 
 body{
     margin: 0px;
-    background-color: $color-fondo2;
+    background-image: url(pictures/fondo\ de\ body.jpg);
 }
 @mixin flex ($direction){
     display: flex;
