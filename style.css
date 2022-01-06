@@ -165,10 +165,8 @@ h2 {
   font-size: 20px;
 }
 
-.desabilitado {
-  background-color: #f8f8ee;
-  color: #525151;
-  cursor: auto;
+.boton-prev:disabled, .boton-next:disabled {
+  background-color: gray;
 }
 
 .div-boton-back {

@@ -27,6 +27,7 @@ const formEpisode = document.querySelector(".form-episode")
 const botonesBusqueda = document.querySelector(".botones-busqueda")
 const menuMobile = document.querySelector(".menu-mobile")
 const botonHamburguesa = document.querySelector(".boton-hamburguesa")
+const divNotFound = document.querySelector(".div-not-found")
 
 
 // pagina principal
@@ -44,7 +45,8 @@ botonCharacter.onclick = () => {
     seccionCharacter.style.display = "flex";
     seccionLocation.style.display = "none"
     seccionEpisode.style.display = "none"
-    seccionDetallePersonaje.style.display = "none"    
+    seccionDetallePersonaje.style.display = "none"  
+    divNotFound.style.display = "none"  
 }
 botonLocation.onclick = () => {
     seccionSearch.style.display = "flex";
@@ -54,6 +56,7 @@ botonLocation.onclick = () => {
     seccionEpisode.style.display = "none"
     seccionDetallePersonaje.style.display = "none"
 }
+    
 botonEpisode.onclick = () => {
     seccionSearch.style.display = "flex";
     seccionHeader.style.display = "none";
@@ -62,6 +65,7 @@ botonEpisode.onclick = () => {
     seccionEpisode.style.display = "flex"
     seccionDetallePersonaje.style.display = "none"    
 }
+    
 
 imagenInicio.onclick = () => {
     seccionHeader.style.display = "flex";
@@ -70,6 +74,7 @@ imagenInicio.onclick = () => {
     seccionLocation.style.display = "none"
     seccionEpisode.style.display = "none"
     seccionDetallePersonaje.style.display = "none"
+    
 }
 
 // onclic de los botones busqueda
@@ -139,6 +144,12 @@ const HTMLTarjetasPersonajes = (personajes) => {
             <h2>${curr.name}</h2>
         </div>`
 }, "")
+
+if(paginaActual === 1){
+    botonPrevPersonajes.disabled = true}
+    else{
+        botonPrevPersonajes.disabled = false
+    }
 divTarjetasPersonajes.innerHTML = htmlDeTarjetas
 }
 obtenerPersonajes()
@@ -210,6 +221,11 @@ const HTMLTarjetasLocaciones = (locaciones) => {
             <p>${curr.type}</p>
         </div>`
     }, "")
+    if(paginaActual === 1){
+        botonPrevLocacion.disabled = true}
+        else{
+            botonPrevLocacion.disabled = false
+        }
     divTarjetasLocaciones.innerHTML = htmlDeTarjetas
 }
 obtenerLocaciones()
@@ -240,6 +256,11 @@ const HTMLTarjetasEpisodios = (episodios) => {
             </div>
         </div>`
     }, "")
+    if(paginaActual === 1){
+        botonPrevEpisodio.disabled = true}
+        else{
+            botonPrevEpisodio.disabled = false
+        }
 divTarjetasEpisodios.innerHTML = htmlDeTarjetas
 }
 obternerEpisodios()
@@ -251,10 +272,10 @@ botonPrevPersonajes.onclick = () => {
         botonPrevPersonajes.disabled = true  //no funciona
         // botonPrev.classList.add("desabilitado")
     }
-    else{
+    //else{
         botonPrevPersonajes.disabled = false
         // botonPrev.classList.remove("desabilitado")
-    }
+//}
      obtenerPersonajes()
 }
 botonNextPersonajes.onclick = () => {
@@ -316,6 +337,10 @@ const searchPorNombreCharacter = (nombre) => {
     .then(res => res.json())
     .then(data =>{
      HTMLTarjetasPersonajes(data.results)
+     console.log(data.results)
+     if(data.results === "404"){
+        divNotFound.style.display = "flex"
+     }
     })
 }
 
