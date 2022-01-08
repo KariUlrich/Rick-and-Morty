@@ -36,6 +36,7 @@ seccionCharacter.style.display = "none";
 seccionLocation.style.display = "none";
 seccionEpisode.style.display = "none";
 seccionDetallePersonaje.style.display = "none"
+divNotFound.style.display = "none"
 
 
 // onclic de los botones de navegacion
@@ -83,6 +84,7 @@ botonCharacterBusqueda.onclick = () => {
     seccionLocation.style.display = "none";
     seccionEpisode.style.display = "none";
     seccionDetallePersonaje.style.display = "none"
+    divNotFound.style.display = "none"
     inputBusquedaPersonaje.value = ""
     inputBusquedaLocation.value = ""
     inputBusquedaEpisode.value = ""
@@ -95,6 +97,7 @@ botonLocationBusqueda.onclick = () => {
     seccionCharacter.style.display = "none";
     seccionEpisode.style.display = "none";
     seccionDetallePersonaje.style.display = "none"
+    divNotFound.style.display = "none"
     inputBusquedaLocation.value = ""
     inputBusquedaPersonaje.value = ""
     inputBusquedaEpisode.value = ""
@@ -107,6 +110,7 @@ botonEpisodeBusqueda.onclick = () => {
     seccionCharacter.style.display = "none";
     seccionLocation.style.display = "none";
     seccionDetallePersonaje.style.display = "none"
+    divNotFound.style.display = "none"
     inputBusquedaEpisode.value = ""
     inputBusquedaPersonaje.value = ""
     inputBusquedaLocation.value = ""
@@ -269,13 +273,11 @@ obternerEpisodios()
 botonPrevPersonajes.onclick = () => {
     paginaActual--
     if (paginaActual === 1){
-        botonPrevPersonajes.disabled = true  //no funciona
-        // botonPrev.classList.add("desabilitado")
+        botonPrevPersonajes.disabled = true
     }
-    //else{
+    else{
         botonPrevPersonajes.disabled = false
-        // botonPrev.classList.remove("desabilitado")
-//}
+}
      obtenerPersonajes()
 }
 botonNextPersonajes.onclick = () => {
@@ -288,12 +290,10 @@ botonNextPersonajes.onclick = () => {
 botonPrevLocacion.onclick = () => {
     paginaActual--
     if (paginaActual === 1){
-        botonPrevLocacion.disabled = true  //no funciona
-        // botonPrev.classList.add("desabilitado")
+        botonPrevLocacion.disabled = true 
     }
     else{
         botonPrevLocacion.disabled = false
-        // botonPrev.classList.remove("desabilitado")
     }
     obtenerLocaciones()
 }
@@ -307,12 +307,10 @@ botonNextLocacion.onclick = () => {
 botonPrevEpisodio.onclick = () => {
     paginaActual--
     if (paginaActual === 1){
-        botonPrevEpisodio.disabled = true  //no funciona
-        // botonPrev.classList.add("desabilitado")
+        botonPrevEpisodio.disabled = true  
     }
     else{
         botonPrevEpisodio.disabled = false
-        // botonPrev.classList.remove("desabilitado")
     }
     obternerEpisodios()
 }
@@ -330,6 +328,10 @@ formCharacter.onsubmit = (e) => {
 e.preventDefault()
 console.log(inputBusquedaPersonaje.value)
 searchPorNombreCharacter(inputBusquedaPersonaje.value)
+divNotFound.style.display = "none"
+}
+inputBusquedaPersonaje.onclick = () => {
+    divNotFound.style.display = "none"
 }
 
 const searchPorNombreCharacter = (nombre) => {
@@ -338,9 +340,9 @@ const searchPorNombreCharacter = (nombre) => {
     .then(data =>{
      HTMLTarjetasPersonajes(data.results)
      console.log(data.results)
-     if(data.results === "404"){
-        divNotFound.style.display = "flex"
-     }
+    })
+    .catch(()=>{
+        divNotFound.style.display = "flex"  
     })
 }
 
@@ -349,11 +351,18 @@ formLocation.onsubmit = (e) => {
     e.preventDefault()
     searchPorNumeroLocation(inputBusquedaLocation.value)    
 }
+inputBusquedaLocation.onclick = () => {
+    divNotFound.style.display = "none"
+}
 const searchPorNumeroLocation = (nombre) => {
     fetch(`https://rickandmortyapi.com/api/location/?name=${nombre}`)
     .then(res => res.json())
     .then(data =>{
     HTMLTarjetasLocaciones(data.results)
+    console.log(data.results)
+    })
+    .catch(()=>{
+        divNotFound.style.display = "flex"  
     })
 }
 // funcionalidad search de episodio por nombre
@@ -361,11 +370,17 @@ formEpisode.onsubmit = (e) => {
     e.preventDefault()
     searchPorNombreEpisode(inputBusquedaEpisode.value)   
 }
+inputBusquedaEpisode.onclick = () => {
+    divNotFound.style.display = "none"
+}
 const searchPorNombreEpisode = (nombre) => {
     fetch(`https://rickandmortyapi.com/api/episode/?name=${nombre}`)
     .then(res => res.json())
     .then(data =>{
     HTMLTarjetasEpisodios(data.results)
+    })
+    .catch(()=>{
+        divNotFound.style.display = "flex"  
     })
 }
 

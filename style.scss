@@ -103,7 +103,11 @@ input{
     background-color: $color-fondo3;
     margin-left: 15px;
 }
+// section not found
+.section-not-found{
+    @include flex($direction:row)
 
+}
 input:hover{
     border-color: $color-hover;
 }

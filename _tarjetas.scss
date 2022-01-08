@@ -34,6 +34,24 @@ p{
     cursor: pointer;
     transition: 0.1s ease-in;
 }
+.div-not-found{
+    @include flex($direction:row);
+    background-image: url(pictures/fondonotfound.jpg);
+    border: solid 8px $color-fondo;
+    width: 400px;
+    height: 300px;
+    position: fixed;
+    top: 300px;
+    p{
+        font-family: $tipo-de-letra;
+        font-size: $tamano-de-fuente-grande;
+        margin-left: 15px;
+    }
+}
+.imagen-not-found{
+    width: 150px;
+    height: 200px;
+}
 .episodios,
 .locacion{
     display: flex;

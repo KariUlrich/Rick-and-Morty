@@ -35,6 +35,29 @@
   transition: 0.1s ease-in;
 }
 
+.div-not-found {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-image: url(pictures/fondonotfound.jpg);
+  border: solid 8px black;
+  width: 400px;
+  height: 300px;
+  position: fixed;
+  top: 300px;
+}
+.div-not-found p {
+  font-family: "Creepster", cursive;
+  font-size: 30px;
+  margin-left: 15px;
+}
+
+.imagen-not-found {
+  width: 150px;
+  height: 200px;
+}
+
 .episodios,
 .locacion {
   display: flex;
@@ -327,6 +350,13 @@ input {
   height: 100%;
   background-color: transparent;
   margin-left: 15px;
+}
+
+.section-not-found {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 input:hover {
