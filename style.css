@@ -200,7 +200,7 @@ h2 {
 }
 
 .div-boton-back {
-  margin-top: 80px;
+  margin-top: 50px;
 }
 .div-boton-back button {
   background-color: #f8f8b8;
@@ -405,6 +405,10 @@ body {
   .barra-de-navegacion-busqueda {
     height: 100px;
   }
+
+  .ul-botones-busqueda {
+    flex-direction: column;
+  }
 }
 @media screen and (max-width: 630px) and (min-width: 320px) {
   .tarjeta-detalle-personaje {
@@ -467,11 +471,19 @@ body {
     width: 320px;
     height: 200px;
   }
+
+  .ul-botones-busqueda {
+    margin-left: 0px;
+    margin-right: 20px;
+  }
+  .ul-botones-busqueda button {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
 @media screen and (max-width: 400px) and (min-width: 320px) {
-  .botones-busqueda button {
-    margin-right: 20px;
-    margin-left: 0px;
+  .ul-botones-busqueda {
+    padding: 0px;
   }
 
   .episodios,
