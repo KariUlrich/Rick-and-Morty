@@ -2,7 +2,8 @@
 @import "variables";
 @import "tarjetas";
 @import "botones";
-@import "mediascreen";
+@import "formularios";
+
 
 
 body{
@@ -65,62 +66,19 @@ body{
     margin-top: 20px;
     box-shadow: 0px 10px 10px -6px $color-fondo;
 }
-// Seccion busqueda - Formularios
+// Seccion busqueda
 .seccion-character,
 .seccion-location,
 .seccion-episode{
     @include flex($direction:column)
 }
-.form-character,
-.form-location,
-.form-episode{
-    @include flex($direction:row);
-    height: 80px;
-    width: 500px;
-    border:solid 3px $color-fondo;
-    border-radius: 20px;
-    margin-top: 30px;
-    background-color: $color-principal
-}
-label {
-    font-family: $tipo-de-letra;
-    font-size: $tamano-de-fuente-mediano;
-    margin-right: 15px; 
-}
-input{
-    border: solid 2px $color-principal;
-    border-radius: 10px;
-    height: 20px;
-    width: 280px;
-    background-color: $color-fondo4;
-    outline: none;
-}
-.div-imagen-busqueda{
-    width: 50px;
-    height: 50px;
-    background-color: $color-fondo3;
-}
-.imagen-busqueda{
-    width: 100%;
-    height: 100%;
-    background-color: $color-fondo3;
-    margin-left: 15px;
-}
+
 // section not found
 .section-not-found{
     @include flex($direction:row)
+}
 
-}
-input:hover{
-    border-color: $color-hover;
-}
-input:active{
-    border-color: $color-hover;
-    box-shadow: 0px 10px 10px -6px $color-hover;
-}
-input:focus{
-    border-color: $color-hover;
-}
+//media screen general 
 
 @media screen and (max-width: 875px) and (min-width: 320px) {
     .menu-mobile{
@@ -135,66 +93,72 @@ input:focus{
              font-size: $tamano-de-fuente-mas-chico;
              margin-bottom: 5px;
             }
-        }
+    }
     .barra-de-navegacion-busqueda{
         height: 100px;
     }
-    }
+}
     
-    @media screen and (max-width: 630px) and (min-width: 320px) {
-        .tarjeta-detalle-personaje{
+@media screen and (max-width: 630px) and (min-width: 320px) {
+    .tarjeta-detalle-personaje{
             @include flex($direction:column);
-        }
-        .div-info{
+    }
+    .div-info{
             display: flex;
             flex-direction: column;
             justify-content: center;
-        }
-        .div-principal{
-            margin-right: 0px;
-        }
     }
-    @media screen and (max-width: 550px) and (min-width: 320px) {
-        .barra-de-navegacion{
+    .div-principal{
+            margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 550px) and (min-width: 320px) {
+    .barra-de-navegacion{
             height: 200px;
             @include flex($direction:column)
-        }
-        .barra-de-navegacion button{
-                margin-bottom: 10px;
-            }
-        .form-character,
-        .form-location,
-        .form-episode{
-            width: 400px;
-        }
-        input{
-            width: 170px;
-        }
     }
-    @media screen and (max-width: 450px) and (min-width: 320px) {
-        .imagen-header-fondo{
+    .barra-de-navegacion button{
+                margin-bottom: 10px;
+    }
+    .form-character,
+    .form-location,
+    .form-episode{
+            width: 400px;
+    }
+    input{
+            width: 170px;
+    }
+}
+
+@media screen and (max-width: 450px) and (min-width: 320px) {
+    .imagen-header-fondo{
             width: 90%;
             height: 400px;
-        }
-
-        .form-character,
-        .form-location,
-        .form-episode{
-            width: 320px;
-        }
-        .div-imagen-busqueda{
-            display: none;
-        }
     }
-    @media screen and (max-width: 400px) and (min-width: 320px) {
-        .botones-busqueda{
+    .form-character,
+    .form-location,
+    .form-episode{
+            width: 320px;
+    }
+    .div-imagen-busqueda{
+            display: none;
+    }
+    .div-not-found{
+        width: 320px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 400px) and (min-width: 320px) {
+    .botones-busqueda{
             button{
                 margin-right: 20px;
                 margin-left: 0px;
             }
-        }
-        .episodios,
-        .locacion{
+    }
+    .episodios,
+    .locacion{
             width: 280px;
             height: 230px;
         img{
@@ -202,45 +166,53 @@ input:focus{
             height: 100px;
         }
     }
-        .div-principal{
+    .div-principal{
             width: 180px;
             height: 200px;
-            }
-        .div-principal img{
+    }
+    .div-principal img{
              width: 180px;
              height: 130px;
-            }
-        .div-principal h2{
-             font-size: $tamano-de-fuente-mediano;
-        }
-        .div-info p{
-            font-size: $tamano-de-fuente-mas-chico;
-        }
     }
+    .div-principal h2{
+             font-size: $tamano-de-fuente-mediano;
+    }
+    .div-info p{
+            font-size: $tamano-de-fuente-mas-chico;
+    }
+    .div-not-found{
+        width: 280px;
+        height: 200px;
+    }
+    .imagen-not-found{
+        width: 120px;
+        height: 170px;
+    }
+}
     
-    @media screen and (max-width: 360px) and (min-width: 320px) {
-        .imagen-header-fondo{
+@media screen and (max-width: 360px) and (min-width: 320px) {
+    .imagen-header-fondo{
             width: 90%;
             height: 370px;
-        }
-        .nombre-imagen-busqueda{
+    }
+    .nombre-imagen-busqueda{
             width: 150px;
             height: 70px;
-       }
-       .form-character,
-       .form-location,
-       .form-episode{
+    }
+    .form-character,
+    .form-location,
+    .form-episode{
         width: 280px;
     }
-       .personajes{
+    .personajes{
            width: 180px;
            height: 200px;
-       }
-       .imagen-personaje{
+    }
+    .imagen-personaje{
         width: 180px;
         height: 130px;
-       }
-       h2{
+    }
+    h2{
         font-size: $tamano-de-fuente-mediano;
     } 
-    }
+}

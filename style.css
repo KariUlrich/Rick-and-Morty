@@ -240,6 +240,62 @@ button:focus {
   box-shadow: 0px 10px 10px -6px #19f89b;
 }
 
+.form-character,
+.form-location,
+.form-episode {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 500px;
+  border: solid 3px black;
+  border-radius: 20px;
+  margin-top: 30px;
+  background-color: #80abc4;
+}
+
+label {
+  font-family: "Creepster", cursive;
+  font-size: 25px;
+  margin-right: 15px;
+}
+
+input {
+  border: solid 2px #80abc4;
+  border-radius: 10px;
+  height: 20px;
+  width: 280px;
+  background-color: #e3e3f8;
+  outline: none;
+}
+
+.div-imagen-busqueda {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+}
+
+.imagen-busqueda {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  margin-left: 15px;
+}
+
+input:hover {
+  border-color: #19f89b;
+}
+
+input:active {
+  border-color: #19f89b;
+  box-shadow: 0px 10px 10px -6px #19f89b;
+}
+
+input:focus {
+  border-color: #19f89b;
+}
+
 body {
   margin: 0px;
   background-image: url(pictures/fondo\ de\ body.jpg);
@@ -323,67 +379,11 @@ body {
   justify-content: center;
 }
 
-.form-character,
-.form-location,
-.form-episode {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-  width: 500px;
-  border: solid 3px black;
-  border-radius: 20px;
-  margin-top: 30px;
-  background-color: #80abc4;
-}
-
-label {
-  font-family: "Creepster", cursive;
-  font-size: 25px;
-  margin-right: 15px;
-}
-
-input {
-  border: solid 2px #80abc4;
-  border-radius: 10px;
-  height: 20px;
-  width: 280px;
-  background-color: #e3e3f8;
-  outline: none;
-}
-
-.div-imagen-busqueda {
-  width: 50px;
-  height: 50px;
-  background-color: transparent;
-}
-
-.imagen-busqueda {
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  margin-left: 15px;
-}
-
 .section-not-found {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-}
-
-input:hover {
-  border-color: #19f89b;
-}
-
-input:active {
-  border-color: #19f89b;
-  box-shadow: 0px 10px 10px -6px #19f89b;
-}
-
-input:focus {
-  border-color: #19f89b;
 }
 
 @media screen and (max-width: 875px) and (min-width: 320px) {
@@ -462,6 +462,11 @@ input:focus {
   .div-imagen-busqueda {
     display: none;
   }
+
+  .div-not-found {
+    width: 320px;
+    height: 200px;
+  }
 }
 @media screen and (max-width: 400px) and (min-width: 320px) {
   .botones-busqueda button {
@@ -496,6 +501,16 @@ input:focus {
 
   .div-info p {
     font-size: 15px;
+  }
+
+  .div-not-found {
+    width: 280px;
+    height: 200px;
+  }
+
+  .imagen-not-found {
+    width: 120px;
+    height: 170px;
   }
 }
 @media screen and (max-width: 360px) and (min-width: 320px) {

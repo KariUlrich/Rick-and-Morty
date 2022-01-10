@@ -1,0 +1,45 @@
+.form-character,
+.form-location,
+.form-episode{
+    @include flex($direction:row);
+    height: 80px;
+    width: 500px;
+    border:solid 3px $color-fondo;
+    border-radius: 20px;
+    margin-top: 30px;
+    background-color: $color-principal
+}
+label {
+    font-family: $tipo-de-letra;
+    font-size: $tamano-de-fuente-mediano;
+    margin-right: 15px; 
+}
+input{
+    border: solid 2px $color-principal;
+    border-radius: 10px;
+    height: 20px;
+    width: 280px;
+    background-color: $color-fondo4;
+    outline: none;
+}
+.div-imagen-busqueda{
+    width: 50px;
+    height: 50px;
+    background-color: $color-fondo3;
+}
+.imagen-busqueda{
+    width: 100%;
+    height: 100%;
+    background-color: $color-fondo3;
+    margin-left: 15px;
+}
+input:hover{
+    border-color: $color-hover;
+}
+input:active{
+    border-color: $color-hover;
+    box-shadow: 0px 10px 10px -6px $color-hover;
+}
+input:focus{
+    border-color: $color-hover;
+}
