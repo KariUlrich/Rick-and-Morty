@@ -21,6 +21,9 @@
 .barra-de-navegacion-busqueda button{
     @include button($color-principal);
 }
+.ul-botones-busqueda{
+    @include flex($direction:row)
+}
 
 //botones paginado
 .botones-paginado{

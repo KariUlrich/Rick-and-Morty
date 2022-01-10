@@ -166,6 +166,13 @@ h2 {
   cursor: pointer;
 }
 
+.ul-botones-busqueda {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 .botones-paginado {
   display: flex;
   justify-content: center;
@@ -269,6 +276,13 @@ body {
 .barra-de-navegacion {
   background-color: black;
   height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.ul-barra-de-navegacion {
   display: flex;
   flex-direction: row;
   align-items: center;

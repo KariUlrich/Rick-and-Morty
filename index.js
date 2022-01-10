@@ -8,6 +8,7 @@ const seccionLocation = document.querySelector(".seccion-location")
 const botonLocation = document.querySelector(".boton-location")
 const seccionEpisode = document.querySelector(".seccion-episode")
 const botonEpisode = document.querySelector(".boton-episode")
+
 const botonCharacterBusqueda = document.querySelector(".boton-character-busqueda")
 const botonLocationBusqueda = document.querySelector(".boton-location-busqueda")
 const botonEpisodeBusqueda = document.querySelector(".boton-episode-busqueda")
@@ -17,6 +18,7 @@ const botonPrevLocacion = document.querySelector(".prev-locacion")
 const botonNextLocacion = document.querySelector(".next-locacion")
 const botonPrevEpisodio = document.querySelector(".prev-episodios")
 const botonNextEpisodio = document.querySelector(".next-episodios")
+
 const seccionDetallePersonaje = document.querySelector(".detalle-personaje")
 const inputBusquedaPersonaje = document.querySelector("#busqueda-input")
 const formCharacter = document.querySelector(".form-character")
@@ -67,7 +69,7 @@ botonEpisode.onclick = () => {
     seccionDetallePersonaje.style.display = "none"    
 }
     
-
+// onlcik de la imagen para ir al header/seccion principal
 imagenInicio.onclick = () => {
     seccionHeader.style.display = "flex";
     seccionSearch.style.display = "none"; 
@@ -119,11 +121,6 @@ botonEpisodeBusqueda.onclick = () => {
     obternerEpisodios()
 }
 
-// onclic de los botones busqueda en menu mobile
-
-
-
-
 // get a la api para generear tarjetas de personaje
 let paginaActual = 1
 let ultimaPagina = 0
@@ -137,7 +134,7 @@ const obtenerPersonajes = () => {
     ultimaPagina = data.info.pages
     HTMLTarjetasPersonajes(data.results)
     clickTarjetaDeCadaPersonaje()
-})
+    })
 }
 const HTMLTarjetasPersonajes = (personajes) => {
    const divTarjetasPersonajes = document.querySelector(".tarjetas-personajes")
@@ -147,11 +144,11 @@ const HTMLTarjetasPersonajes = (personajes) => {
             <img class="imagen-personaje" src="${curr.image}"/>
             <h2>${curr.name}</h2>
         </div>`
-}, "")
+   }, "")
 
-if(paginaActual === 1){
-    botonPrevPersonajes.disabled = true}
-    else{
+    if(paginaActual === 1){
+        botonPrevPersonajes.disabled = true}
+       else{
         botonPrevPersonajes.disabled = false
     }
 divTarjetasPersonajes.innerHTML = htmlDeTarjetas
@@ -277,7 +274,7 @@ botonPrevPersonajes.onclick = () => {
     }
     else{
         botonPrevPersonajes.disabled = false
-}
+    }
      obtenerPersonajes()
 }
 botonNextPersonajes.onclick = () => {
@@ -328,8 +325,8 @@ formCharacter.onsubmit = (e) => {
 e.preventDefault()
 console.log(inputBusquedaPersonaje.value)
 searchPorNombreCharacter(inputBusquedaPersonaje.value)
-divNotFound.style.display = "none"
 }
+// onlcick para que se borre el not-found
 inputBusquedaPersonaje.onclick = () => {
     divNotFound.style.display = "none"
 }
@@ -351,6 +348,7 @@ formLocation.onsubmit = (e) => {
     e.preventDefault()
     searchPorNumeroLocation(inputBusquedaLocation.value)    
 }
+// onlcick para que se borre el not-found
 inputBusquedaLocation.onclick = () => {
     divNotFound.style.display = "none"
 }
@@ -370,6 +368,7 @@ formEpisode.onsubmit = (e) => {
     e.preventDefault()
     searchPorNombreEpisode(inputBusquedaEpisode.value)   
 }
+// onlcick para que se borre el not-found
 inputBusquedaEpisode.onclick = () => {
     divNotFound.style.display = "none"
 }
@@ -384,12 +383,10 @@ const searchPorNombreEpisode = (nombre) => {
     })
 }
 
-
 //funcionalidad menu mobile
-
 botonHamburguesa.onclick = () => {
     botonesBusqueda.style.display = "flex";
     menuMobile.style.display = "none"
-    }
+}
 
 

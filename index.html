@@ -19,21 +19,25 @@
             <img class="imagen-header-fondo" src="pictures/fondo-rick-y-morty.jpg" alt="foto-fondo-rick-&-morty">
         </div>
         <nav class="barra-de-navegacion">
-            <button class="boton-character">Character</button>
-            <button class="boton-location">Location</button>
-            <button class="boton-episode">Episode</button>
+            <ul class="ul-barra-de-navegacion">
+            <li><button class="boton-character">Character</button></li>
+            <li></li><button class="boton-location">Location</button></li>
+            <li></li><button class="boton-episode">Episode</button></li>
+            </ul>
         </nav>
     </header>
     <main>
-        <section class="seccion-busqueda">
+       <section class="seccion-busqueda">
            <nav class="barra-de-navegacion-busqueda">
             <div class="imagen-inicio">
-                <img class="nombre-imagen-busqueda" src="pictures/Rick_and_Morty.svg" alt="nombre">
+                <img class="nombre-imagen-busqueda" src="pictures/Rick_and_Morty.svg" alt="rick&morty">
             </div>
             <div class="botones-busqueda">
-            <button class="boton-character-busqueda">Character</button>
-            <button class="boton-location-busqueda">Location</button>
-            <button class="boton-episode-busqueda">Episode</button>
+                <ul class="ul-botones-busqueda">
+                  <li><button class="boton-character-busqueda">Character</button></li>
+                  <li><button class="boton-location-busqueda">Location</button></li>
+                  <li><button class="boton-episode-busqueda">Episode</button></li>
+                </ul>
             </div>
             <div class="menu-mobile">
                 <button class="boton-hamburguesa">
@@ -47,7 +51,7 @@
             <label for="busqueda-input">Search</label>        
             <input type="text" id="busqueda-input" placeholder= "search character by name" aria-label="input-busqueda">
             <div class="div-imagen-busqueda">
-                <img class="imagen-busqueda" src="pictures/imagenform.jpg" alt="busqueda">
+                <img class="imagen-busqueda" src="pictures/imagenform.jpg" alt="imagen-busqueda">
             </div>
            </form>
              <div class="tarjetas-personajes">
@@ -59,47 +63,43 @@
        </section>
        <section class="detalle-personaje">
        </section>
-<section class="seccion-location">
-    <form class="form-location">
+       <section class="seccion-location">
+          <form class="form-location">
             <label for="busqueda-input-location">Search</label>        
             <input type="text" id="busqueda-input-location" placeholder= "search location by name" aria-label="input-busqueda">
             <div class="div-imagen-busqueda">
-                <img class="imagen-busqueda" src="pictures/imagenform.jpg" alt="busqueda">
+                <img class="imagen-busqueda" src="pictures/imagenform.jpg" alt="imagen-busqueda">
             </div>
-    </form>
-    <div class="tarjetas-locacion">
-    </div>
-    <div class="botones-paginado">
-        <button class="boton-prev prev-locacion">Prev Page</button>
-        <button class="boton-next next-locacion">Next Page</button>
-    </div>
-</section>
-<section class="seccion-episode">
-    <form class="form-episode">
+          </form>
+            <div class="tarjetas-locacion">
+            </div>
+           <div class="botones-paginado">
+            <button class="boton-prev prev-locacion">Prev Page</button>
+            <button class="boton-next next-locacion">Next Page</button>
+           </div>
+       </section>
+       <section class="seccion-episode">
+          <form class="form-episode">
             <label for="busqueda-input-episode">Search</label>        
             <input type="text" id="busqueda-input-episode" placeholder= "search episode by name" aria-label="input-busqueda">
             <div class="div-imagen-busqueda">
-                <img class="imagen-busqueda" src="pictures/imagenform.jpg" alt="busqueda">
+                <img class="imagen-busqueda" src="pictures/imagenform.jpg" alt="imagen-busqueda">
             </div>
-    </form>
-    <div class="tarjetas-episodios">
-    </div>
-    <div class="botones-paginado">
-        <button class="boton-prev prev-episodios">Prev Page</button>
-        <button class="boton-next next-episodios">Next Page</button>
-    </div>
-</section>
-<section class="section-not-found">
-    <div class="div-not-found">
-        <img class="imagen-not-found" src="pictures/notfound.png" alt="not-found">
-        <p>Not found</p>
-     </div>
-</section>
-
-</main>
-
-
-
+          </form>
+            <div class="tarjetas-episodios">
+            </div>
+            <div class="botones-paginado">
+             <button class="boton-prev prev-episodios">Prev Page</button>
+             <button class="boton-next next-episodios">Next Page</button>
+            </div>
+       </section>
+       <section class="section-not-found">
+          <div class="div-not-found">
+           <img class="imagen-not-found" src="pictures/notfound.png" alt="not-found">
+           <p>Not found</p>
+          </div>
+       </section>
+   </main>
     <script src="index.js"></script>
 </body>
 </html>
