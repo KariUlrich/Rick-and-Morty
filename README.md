@@ -15,9 +15,7 @@
 
 ***
 
-### Enlace al proyecto para visitarlo:
-
-[Link al proyecto](https://kariulrich.github.io/Rick-and-Morty/)
+**Enlace al proyecto para visitarlo:** [Link al proyecto](https://kariulrich.github.io/Rick-and-Morty/)
 
 ***
 
@@ -40,11 +38,7 @@
 
 ***
 
-### Api Utilizada: 
-
-[Rick & Morty](https://rickandmortyapi.com/)
+**Api Utilizada:** [Rick & Morty](https://rickandmortyapi.com/)
 
 
-### Realizado por: 
-
-[Karina Ulrich](https://github.com/KariUlrich)
+**Realizado por:** [Karina Ulrich](https://github.com/KariUlrich)
