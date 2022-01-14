@@ -1,9 +1,9 @@
-## Cuarto trabajo de ADA !
-### Buscador de Rick & Morty
+# Cuarto trabajo de ADA !
+## Buscador de Rick & Morty
 
 ![imagen Rick & Morty](pictures/fondo-rick-y-morty.jpg)
 
-#### Comenzando a utilizar APIS y SASS, sumadas a las tecnologías ya aprendidas:
+### Comenzando a utilizar APIS y SASS, sumadas a las tecnologías ya aprendidas:
 
 - HTML
 
@@ -11,11 +11,13 @@
 
 - JavaScript
 
-#### Enlace al proyecto para visitarlo
+- Github
+
+### Enlace al proyecto para visitarlo 
 
 [Link al proyecto](https://kariulrich.github.io/Rick-and-Morty/)
 
-#### Funciones del Buscador:
+### Funciones del Buscador:
 
 - Ver todos los personajes, locaciones y episodios
 
@@ -25,15 +27,16 @@
 
 - Pagidado de las secciones principales
 
-#### Para clonar el proyecto:
+### Para obtener el proyecto:
 
 - Clonar el proyecto de GitHub
 - Ejecutar en la consola el siguiente comando: npm install
 
-#### Api Utilizada:
+### Api Utilizada:
 
 [Rick & Morty](https://rickandmortyapi.com/)
 
 
 Realizado por: 
-[Karina Ulrich][https://github.com/KariUlrich]
+
+[Karina Ulrich](https://github.com/KariUlrich)
