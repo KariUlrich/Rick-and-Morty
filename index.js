@@ -341,6 +341,8 @@ const searchPorNombreCharacter = (nombre) => {
     .catch(()=>{
         divNotFound.style.display = "flex"  
     })
+    botonPrevPersonajes.style.display = "none"
+    botonNextPersonajes.style.display = "none"
 }
 
 // funcionalidad search de locacion por nombre
@@ -362,6 +364,8 @@ const searchPorNumeroLocation = (nombre) => {
     .catch(()=>{
         divNotFound.style.display = "flex"  
     })
+    botonPrevLocacion.style.display = "none"
+    botonNextLocacion.style.display = "none"
 }
 // funcionalidad search de episodio por nombre
 formEpisode.onsubmit = (e) => {
@@ -381,6 +385,8 @@ const searchPorNombreEpisode = (nombre) => {
     .catch(()=>{
         divNotFound.style.display = "flex"  
     })
+    botonPrevEpisodio.style.display = "none"
+    botonNextEpisodio.style.display = "none"
 }
 
 //funcionalidad menu mobile
