@@ -3,7 +3,7 @@
 
 ![imagen Rick & Morty](pictures/fondo-rick-y-morty.jpg)
 
-### Comenzando a utilizar APIS y SASS, sumadas a las tecnologías ya aprendidas:
+### Comenzando a utilizar APIs y SASS, sumadas a las tecnologías ya aprendidas:
 
 - HTML
 
