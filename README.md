@@ -13,11 +13,13 @@
 
 - Github
 
+***
 
 ### Enlace al proyecto para visitarlo:
 
 [Link al proyecto](https://kariulrich.github.io/Rick-and-Morty/)
 
+***
 
 ### Funciones del Buscador:
 
@@ -29,14 +31,20 @@
 
 - Pagidado de las secciones principales
 
+***
 
 ### Para obtener el proyecto:
 
 - Clonar el proyecto de GitHub
 - Ejecutar en la consola el siguiente comando: npm install
 
+***
 
-### Api Utilizada: [Rick & Morty][https://rickandmortyapi.com/]
+### Api Utilizada: 
+
+[Rick & Morty][Api]
+
+[Api]: https://rickandmortyapi.com/
 
 
 Realizado por: 
