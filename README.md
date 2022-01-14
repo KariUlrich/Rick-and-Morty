@@ -42,11 +42,9 @@
 
 ### Api Utilizada: 
 
-[Rick & Morty][Api]
-
-[Api]: https://rickandmortyapi.com/
+[Rick & Morty](https://rickandmortyapi.com/)
 
 
-Realizado por: 
+### Realizado por: 
 
 [Karina Ulrich](https://github.com/KariUlrich)
