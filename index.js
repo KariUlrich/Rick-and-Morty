@@ -42,6 +42,31 @@ divNotFound.style.display = "none"
 
 
 // onclic de los botones de navegacion
+
+// pensa alguna manera de abstraer el codigo en uan funcion unica, porque aca esta largo y repetitivo. 
+// por ejemplo
+
+
+// const secciones = [
+//     seccionSearch, 
+//     seccionHeader, 
+//     seccionCharacter, 
+//     seccionLocation, 
+//     seccionEpisode, 
+//     seccionDetallePersonaje, 
+//     divNotFound
+// ]
+
+// const ocultarSecciones = (seccion) => {
+//     secciones.forEach(seccionAOcultar => seccionAOcultar.style.display = "none")
+//     seccion.style.display = "flex"
+//     seccionSearch.style.display = "flex"
+// }
+// botonCharacter.onclick = () => ocultarSecciones(seccionCharacter)
+// botonLocation.onclick = () => ocultarSecciones(seccionLocation)
+// botonEpisode.onclick = () =>  ocultarSecciones(seccionEpisode)
+
+
 botonCharacter.onclick = () => {
     seccionSearch.style.display = "flex"; 
     seccionHeader.style.display = "none";
@@ -81,6 +106,8 @@ imagenInicio.onclick = () => {
 }
 
 // onclic de los botones busqueda
+// No creo que sea necesario obtener personajes, locaciones y episodios cada vez. 
+//  No es posible solo buscar personajes con personajes, locaciones con locaciones, etc?
 botonCharacterBusqueda.onclick = () => {
     seccionCharacter.style.display = "flex";
     seccionLocation.style.display = "none";
@@ -126,10 +153,12 @@ let paginaActual = 1
 let ultimaPagina = 0
 
 const obtenerPersonajes = () => {
+    // no dejes console log
     console.log(paginaActual)
     fetch(`https://rickandmortyapi.com/api/character?page=${paginaActual}`)
     .then(res => res.json())
     .then(data => {
+        // no dejes console log
     console.log(data)   
     ultimaPagina = data.info.pages
     HTMLTarjetasPersonajes(data.results)
@@ -146,6 +175,13 @@ const HTMLTarjetasPersonajes = (personajes) => {
         </div>`
    }, "")
 
+//    deja espacios, y respeta los saltos de linea que vimos en clase, la prolijidad es importante
+//    if (paginaActual === 1) {
+//      botonPrevPersonajes.disabled = true
+//    }
+//    else {
+//      botonPrevPersonajes.disabled = false
+//    }
     if(paginaActual === 1){
         botonPrevPersonajes.disabled = true}
        else{
@@ -186,6 +222,7 @@ const getDelPersonaje = (id) => {
     fetch(`https://rickandmortyapi.com/api/character/${id}`)
     .then(res => res.json())
     .then(data => {
+        // no dejes console log
       console.log(data)
       HTMLDeLaSeccionDetalleDelPersonaje(data)
     })
@@ -233,6 +270,7 @@ obtenerLocaciones()
 
 // get a la api para generear tarjetas de episodios
 const obternerEpisodios = () => {
+    // no dejes console log
     console.log(paginaActual)
     fetch(`https://rickandmortyapi.com/api/episode?page=${paginaActual}`)
     .then(res => res.json())
@@ -322,7 +360,9 @@ botonNextEpisodio.onclick = () => {
 //SEARCH X NOMBRE EN LOS ENDPOINTS
 // funcionalidad search de personajes por nombre
 formCharacter.onsubmit = (e) => {
+    // ojo con el tabulado aca!!
 e.preventDefault()
+// no dejes console.log
 console.log(inputBusquedaPersonaje.value)
 searchPorNombreCharacter(inputBusquedaPersonaje.value)
 }
@@ -359,6 +399,7 @@ const searchPorNumeroLocation = (nombre) => {
     .then(res => res.json())
     .then(data =>{
     HTMLTarjetasLocaciones(data.results)
+    // no dejes console.log
     console.log(data.results)
     })
     .catch(()=>{
