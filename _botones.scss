@@ -41,13 +41,12 @@
 }
 
 // boton atras de la tarjeta de detalle
-// muy desprolijo el tabulado aca, es imposible entender el codigo sin un buen tabulado
 .div-boton-back{
     margin-top: 50px;
-button{
+ button{
     @include button($color-fondo5);
     font-size: $tamano-de-fuente-chico;
-}
+ }
 }
 // botones menu mobile
 .menu-mobile{

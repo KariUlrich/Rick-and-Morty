@@ -20,14 +20,13 @@
     margin: 15px;
     box-shadow: 0px 10px 10px -6px $color-fondo;
     overflow: hidden;
-    // tabulado!! esto esta adentro de html-tarjetas, el tabulado debe reflejarlo
-p{
+ p{
     font-family: $tipo-de-letra-secundario;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 5px;
     margin-bottom: 10px;
-}
+ }
 }
 .personajes{
     @include flex($direction:column);
@@ -43,11 +42,11 @@ p{
     height: 300px;
     position: fixed;
     top: 300px;
-    p{
+ p{
         font-family: $tipo-de-letra;
         font-size: $tamano-de-fuente-grande;
         margin-left: 15px;
-    }
+ }
 }
 .imagen-not-found{
     width: 150px;
@@ -55,33 +54,30 @@ p{
 }
 .episodios,
 .locacion{
-    // mejora el tabulado
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 350px;
     height: 300px;
     background-color: $color-fondo4;
-img{
+ img{
     width: 350px;
     height: 150px;
     margin: 0;
-}
-h2{
+ }
+ h2{
     margin: 5px 0px;
-}
+ }
 }
 .locacion{
-    // mejora el tabulado
-img{
+ img{
     width: 350px;
     height: 150px;
     margin: 0;
-}
-// repetis h2
-h2{
+ }
+ h2{
     margin: 5px 0px;
-}
+ }
 }
 h2{
     font-family: $tipo-de-letra;
@@ -110,10 +106,10 @@ h2{
     overflow: hidden;
 }
 .div-info{
-p{
+ p{
     font-family: $tipo-de-letra;
     font-size: $tamano-de-fuente-chico;
-}
+ }
 }
 .personajes:hover{
     transform: scale(1.1)
