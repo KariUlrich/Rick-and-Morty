@@ -20,6 +20,7 @@
     margin: 15px;
     box-shadow: 0px 10px 10px -6px $color-fondo;
     overflow: hidden;
+    // tabulado!! esto esta adentro de html-tarjetas, el tabulado debe reflejarlo
 p{
     font-family: $tipo-de-letra-secundario;
     margin-left: 20px;
@@ -54,6 +55,7 @@ p{
 }
 .episodios,
 .locacion{
+    // mejora el tabulado
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -70,11 +72,13 @@ h2{
 }
 }
 .locacion{
+    // mejora el tabulado
 img{
     width: 350px;
     height: 150px;
     margin: 0;
 }
+// repetis h2
 h2{
     margin: 5px 0px;
 }

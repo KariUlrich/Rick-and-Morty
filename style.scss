@@ -4,7 +4,7 @@
 @import "botones";
 @import "formularios";
 
-
+// deja espacio entre el selector y la llave: body {
 body{
     margin: 0px;
     background-image: url(pictures/fondo\ de\ body.jpg);
@@ -39,6 +39,7 @@ body{
 .barra-de-navegacion{
     background-color: $color-fondo;
     height: 100px;
+    // deja espacio entre los dos puntos y el param
     @include flex($direction:row)
 }
 .ul-barra-de-navegacion{
@@ -80,6 +81,7 @@ body{
 //media screen general 
 
 @media screen and (max-width: 875px) and (min-width: 320px) {
+    // esta mal el tabulado aca, debe ser un tab, no dos 
     .menu-mobile{
             display: flex;
     }
@@ -103,6 +105,7 @@ body{
     
 @media screen and (max-width: 630px) and (min-width: 320px) {
     .tarjeta-detalle-personaje{
+    //  mejora el tabulado
             @include flex($direction:column);
     }
     .div-info{
@@ -177,6 +180,7 @@ body{
             width: 180px;
             height: 200px;
     }
+    // aca deberias usar anidado, no es necesario repetir .div-principal
     .div-principal img{
              width: 180px;
              height: 130px;
